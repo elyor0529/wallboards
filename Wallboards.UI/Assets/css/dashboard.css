@@ -109,24 +109,21 @@ hr {
 }
 
 #sales-doughnut-chart-us, #sales-doughnut-chart-nl, #sales-doughnut-chart-de {
-    height: 280px;
-    margin-top: 1rem;
+    height: 200px;
     width: 100%;
 }
 
 #page-views-spline-area-chart, #orders-spline-area-chart, #revenue-spline-area-chart {
-    height: 100px;
+    height: 150px;
     width: 100%;
 }
 
 #users-doughnut-chart, #users-spline-chart {
-    height: 280px;
-    margin-top: 2rem;
+    height: 250px;
     width: 100%;
 }
 
 #users-countries-bar-chart {
-    height: 360px;
-    margin-top: 2rem;
+    height: 250px;
     width: 100%;
 }

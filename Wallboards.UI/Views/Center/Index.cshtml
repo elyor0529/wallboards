@@ -3,95 +3,81 @@
 }
 @section css{
     <style>
-
     </style>
-}  
-<h3>Sales &#8211; Top 3 Countries</h3>
+}
 
-<!-- sales doughnut charts -->
-<div class="row">
-    <div class="col-md-4">
-        <div class="inview" id="sales-doughnut-chart-us"></div>
-        <h3 class="align-center">United States</h3>
-    </div>
+<div id="panel-1">
 
-    <div class="col-md-4">
-        <div class="inview" id="sales-doughnut-chart-nl"></div>
-        <h3 class="align-center">Netherlands</h3>
-    </div>
+    <div class="row">
 
-    <div class="col-md-4">
-        <div class="inview" id="sales-doughnut-chart-de"></div>
-        <h3 class="align-center">Germany</h3>
-    </div>
-</div>
-<!-- row sales doughnt charts -->
+        <div class="col-md-4">
+            <h3>Товарооборот</h3>
 
-<hr>
+            <div class="inview" id="users-spline-chart"></div>
+        </div>
 
-<!-- stats spline area charts -->
-<div class="row">
-    <div class="col-md-4">
-        <div class="card card-block">
-            <h5 class="card-title">PAGE VIEWS</h5>
-            <h2>38,435,184</h2>
-            <div class="inview" id="page-views-spline-area-chart"></div>
+        <div class="col-md-4">
+            <h3>Кол-во поставщиков на торгах</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-block">
+                        <h5 class="card-title">ГЗ</h5>
+                        <h2>38,435,184</h2>
+                        <div class="inview" id="page-views-spline-area-chart"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-block">
+                        <h5 class="card-title">КЗ</h5>
+                        <h2>320,151</h2>
+                        <div class="inview" id="orders-spline-area-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Кол-во торгов в разрезе платформ </h3>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="inview" id="sales-doughnut-chart-us"></div>
+                    <h3 class="align-center">КЗ</h3>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="inview" id="sales-doughnut-chart-nl"></div>
+                    <h3 class="align-center">ГЗ</h3>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="inview" id="sales-doughnut-chart-de"></div>
+                    <h3 class="align-center">Каталог</h3>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="card card-block">
-            <h5 class="card-title">ORDERS</h5>
-            <h2>320,151</h2>
-            <div class="inview" id="orders-spline-area-chart"></div>
-        </div>
+    <hr>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <h3>ТОП 3 продаваемый товары </h3>
+
+            <div class="inview" id="users-countries-bar-chart"></div>
+        </div> 
+
     </div>
 
-    <div class="col-md-4">
-        <div class="card card-block">
-            <h5 class="card-title">REVENUE</h5>
-            <h2>$15,341,110</h2>
-            <div class="inview" id="revenue-spline-area-chart"></div>
-        </div>
-    </div>
 </div>
-<!-- row stats spline area charts -->
-
-<hr>
-
-<h3>New vs Returning Users</h3>
-
-<!-- users doughnut and spline chart -->
-<div class="row">
-    <div class="col-lg-3 col-md-4">
-        <div class="inview" id="users-doughnut-chart"></div>
-    </div>
-
-    <div class="col-lg-9 col-md-8">
-        <div class="inview" id="users-spline-chart"></div>
-    </div>
-</div>
-<!-- row users doughnut and spline chart -->
-
-<hr>
-
-<h3>Users By Countries</h3>
-
-<!-- users countries bar chart -->
-<div class="row">
-    <div class="col-md-12">
-        <div class="inview" id="users-countries-bar-chart"></div>
-    </div>
-</div>
-<!-- row users countries bar chart -->
-
 
 @section js{
 
     <script src="~/assets/js/canvasjs.min.js"></script>
     <script src="~/assets/js/jquery.scrollspeed.min.js"></script>
     <script src="~/assets/js/jquery.inview.min.js"></script>
-     
+
     <script>
         $(function () {
             var totalRevenue = 15341110,
@@ -103,9 +89,9 @@
                 backgroundColor: "transparent",
                 title: {
                     fontColor: "#848484",
-                    fontSize: 70,
+                    fontSize: 30,
                     horizontalAlign: "center",
-                    text: "47%",
+                    text: "4345345",
                     verticalAlign: "center"
                 },
                 toolTip: {
@@ -135,9 +121,9 @@
                 backgroundColor: "transparent",
                 title: {
                     fontColor: "#848484",
-                    fontSize: 70,
+                    fontSize: 30,
                     horizontalAlign: "center",
-                    text: "19%",
+                    text: "897878",
                     verticalAlign: "center"
                 },
                 toolTip: {
@@ -167,9 +153,9 @@
                 backgroundColor: "transparent",
                 title: {
                     fontColor: "#848484",
-                    fontSize: 70,
+                    fontSize: 30,
                     horizontalAlign: "center",
-                    text: "12%",
+                    text: "878451",
                     verticalAlign: "center"
                 },
                 toolTip: {
@@ -404,47 +390,54 @@
                     {
                         color: "#424242",
                         legendMarkerType: "square",
-                        legendText: "NEW",
-                        name: "NEW",
+                        legendText: "ГЗ",
+                        name: "ГЗ",
                         showInLegend: true,
                         type: "spline",
                         dataPoints: [
-                            { x: new Date("1 Jan 2015"), y: 325799 },
-                            { x: new Date("1 Feb 2015"), y: 401837 },
-                            { x: new Date("1 Mar 2015"), y: 482323 },
-                            { x: new Date("1 Apr 2015"), y: 332063 },
-                            { x: new Date("1 May 2015"), y: 387684 },
-                            { x: new Date("1 Jun 2015"), y: 476797 },
-                            { x: new Date("1 Jul 2015"), y: 546756 },
-                            { x: new Date("1 Aug 2015"), y: 437186 },
-                            { x: new Date("1 Sep 2015"), y: 597813 },
-                            { x: new Date("1 Oct 2015"), y: 563133 },
-                            { x: new Date("1 Nov 2015"), y: 595657 },
-                            { x: new Date("1 Dec 2015"), y: 618231 }
+                            { x: new Date("2011"), y: 325799 },
+                            { x: new Date("2012"), y: 401837 },
+                            { x: new Date("2013"), y: 482323 },
+                            { x: new Date("2014"), y: 332063 },
+                            { x: new Date("2015"), y: 387684 },
+                            { x: new Date("2016"), y: 476797 },
+                            { x: new Date("2017"), y: 546756 }
                         ]
                     },
                     {
                         color: "#c70000",
                         legendMarkerType: "square",
-                        legendText: "RETURNING",
-                        name: "RETURNING",
+                        legendText: "КЗ",
+                        name: "КЗ",
                         showInLegend: true,
                         type: "spline",
                         dataPoints: [
-                            { x: new Date("1 Jan 2015"), y: 108599 },
-                            { x: new Date("1 Feb 2015"), y: 133945 },
-                            { x: new Date("1 Mar 2015"), y: 160774 },
-                            { x: new Date("1 Apr 2015"), y: 110688 },
-                            { x: new Date("1 May 2015"), y: 129228 },
-                            { x: new Date("1 Jun 2015"), y: 158932 },
-                            { x: new Date("1 Jul 2015"), y: 182252 },
-                            { x: new Date("1 Aug 2015"), y: 145728 },
-                            { x: new Date("1 Sep 2015"), y: 199271 },
-                            { x: new Date("1 Oct 2015"), y: 187711 },
-                            { x: new Date("1 Nov 2015"), y: 198552 },
-                            { x: new Date("1 Dec 2015"), y: 206077 }
+                             { x: new Date("2011"), y: 108599 },
+                             { x: new Date("2012"), y: 133945 },
+                             { x: new Date("2013"), y: 160774 },
+                             { x: new Date("2014"), y: 110688 },
+                             { x: new Date("2015"), y: 129228 },
+                             { x: new Date("2016"), y: 158932 },
+                             { x: new Date("2017"), y: 182252 },
                         ]
-                    }
+                    },
+                     {
+                         color: "white",
+                         legendMarkerType: "square",
+                         legendText: "Каталог",
+                         name: "Каталог",
+                         showInLegend: true,
+                         type: "spline",
+                         dataPoints: [
+                             { x: new Date("2011"), y: 808799 },
+                             { x: new Date("2012"), y: 133945 },
+                             { x: new Date("2013"), y: 968774 },
+                             { x: new Date("2014"), y: 114688 },
+                             { x: new Date("2015"), y: 29928 },
+                             { x: new Date("2016"), y: 158932 },
+                             { x: new Date("2017"), y: 782292 },
+                         ]
+                     }
                 ]
             });
 
@@ -471,7 +464,7 @@
                     cornerRadius: 0,
                     fontColor: "#424242",
                     contentFormatter: function (e) {
-                        return e.entries[0].dataPoint.label + ": " + CanvasJS.formatNumber(Math.round(e.entries[0].dataPoint.y / 100 * totalUsers), '###,###'); // calculating and showing country wise number of users inside tooltip
+                        return e.entries[0].dataPoint.label + ": " + CanvasJS.formatNumber(Math.round(e.entries[0].dataPoint.y / 100 * totalUsers), '###,###');
                     }
                 },
                 data: [
@@ -483,14 +476,9 @@
                         indexLabelPlacement: "outside",
                         type: "bar",
                         dataPoints: [
-                            { y: 2, indexLabel: "2%", label: "Others" },
-                            { y: 4, indexLabel: "4%", label: "Japan" },
-                            { y: 5, indexLabel: "5%", label: "India" },
-                            { y: 12, indexLabel: "12%", label: "Netherlands" },
-                            { y: 9, indexLabel: "9%", label: "France" },
-                            { y: 10, indexLabel: "10%", label: "Spain" },
-                            { y: 14, indexLabel: "14%", label: "Germany" },
-                            { y: 44, indexLabel: "44%", label: "United States" }
+                            { y: 20148534906, indexLabel: "сахар", label: "КЗ" },
+                            { y: 465429008985, indexLabel: "говядина", label: "ГЗ" },
+                            { y: 382473467150, indexLabel: "мука", label: "Каталог" }
                         ]
                     }
                 ]

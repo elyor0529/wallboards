@@ -108,22 +108,27 @@ hr {
     margin-bottom: 0px;
 }
 
-#sales-doughnut-chart-us, #sales-doughnut-chart-nl, #sales-doughnut-chart-de {
-    height: 200px;
+.doughnut-chart {
+    height: 150px !important;
     width: 100%;
 }
 
-#page-views-spline-area-chart, #orders-spline-area-chart, #revenue-spline-area-chart {
-    height: 150px;
+.area-chart {
+    height: 100px !important;
     width: 100%;
 }
 
-#users-doughnut-chart, #users-spline-chart {
-    height: 250px;
+.spline-chart {
+    height: 200px !important;
     width: 100%;
 }
 
-#users-countries-bar-chart {
-    height: 250px;
+.bar-chart {
+    height: 200px !important;
     width: 100%;
+}
+
+.btn-outline-success {
+    color: white !important;
+    border-color: white !important;
 }

@@ -1,7 +1,14 @@
 body {
     padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #eee;
+    padding-bottom: 40px; 
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-bottom: 3.5rem;
+    /* padding-top: 3.5rem; */
+    padding-top: 70px;
 }
 
 .form-signin {
@@ -43,3 +50,8 @@ body {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
+
+    .btn-outline-success{
+    color: white !important;
+    border-color: white !important;
+}

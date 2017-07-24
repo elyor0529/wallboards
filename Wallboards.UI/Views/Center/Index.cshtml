@@ -13,7 +13,7 @@
         <div class="col-md-4">
             <h3>Товарооборот</h3>
 
-            <div class="inview" id="users-spline-chart"></div>
+            <div class="spline-chart inview" id="chart1"></div>
         </div>
 
         <div class="col-md-4">
@@ -23,14 +23,14 @@
                     <div class="card card-block">
                         <h5 class="card-title">ГЗ</h5>
                         <h2>38,435,184</h2>
-                        <div class="inview" id="page-views-spline-area-chart"></div>
+                        <div class="area-chart inview" id="chart2"></div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card card-block">
                         <h5 class="card-title">КЗ</h5>
                         <h2>320,151</h2>
-                        <div class="inview" id="orders-spline-area-chart"></div>
+                        <div class="area-chart inview" id="chart3"></div>
                     </div>
                 </div>
             </div>
@@ -41,17 +41,20 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    <div class="inview" id="sales-doughnut-chart-us"></div>
+                    <div class="doughnut-chart inview" id="chart4"></div>
+                    <br />
                     <h3 class="align-center">КЗ</h3>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="inview" id="sales-doughnut-chart-nl"></div>
+                    <div class="doughnut-chart inview" id="chart5"></div>
+                    <br />
                     <h3 class="align-center">ГЗ</h3>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="inview" id="sales-doughnut-chart-de"></div>
+                    <div class="doughnut-chart inview" id="chart6"></div>
+                    <br />
                     <h3 class="align-center">Каталог</h3>
                 </div>
             </div>
@@ -65,8 +68,92 @@
         <div class="col-md-4">
             <h3>ТОП 3 продаваемый товары </h3>
 
-            <div class="inview" id="users-countries-bar-chart"></div>
-        </div> 
+            <div class="bar-chart inview" id="chart7"></div>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Экономия денежных средств </h3>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="doughnut-chart inview" id="chart8"></div>
+                    <br />
+                    <h3 class="align-center">КЗ</h3>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="doughnut-chart inview" id="chart9"></div>
+                    <br />
+                    <h3 class="align-center">ГЗ</h3>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="doughnut-chart inview" id="chart10"></div>
+                    <br />
+                    <h3 class="align-center">Каталог</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Среднее кол-во участников за каждые лот </h3>
+
+            <div class="spline-chart inview" id="chart11"></div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <h3>Кол-во сотрудников </h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-block">
+                        <h5 class="card-title">ИТ</h5>
+                        <h2>385,14</h2>
+                        <div class="area-chart inview" id="chart13"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-block">
+                        <h5 class="card-title">Центр</h5>
+                        <h2>320,11</h2>
+                        <div class="area-chart inview" id="chart14"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Кол-во звонков </h3>
+            <div class="bar-chart inview" id="chart15"></div> 
+        </div>
+
+        <div class="col-md-4">
+            <h3>Доля платформ</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="bar-chart inview" id="chart12"></div>
+                </div>
+                <div class="col-md-6">
+                    <ul style="list-style:none;">
+                        <li>
+                            <h3 style="color:#c70000">КЗ - 1921757</h3>
+                        </li>   
+                        <li>
+                            <h3 style="color:#5cb85c">ГЗ - 1928977</h3>
+                        </li>
+                        <li>
+                            <h3 style="color:white;">Каталог - 5765279</h3>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+
+        </div>
 
     </div>
 
@@ -79,12 +166,12 @@
     <script src="~/assets/js/jquery.inview.min.js"></script>
 
     <script>
-        $(function () {
-            var totalRevenue = 15341110,
-                    totalUsers = 7687036;
 
-            // CanvasJS doughnut chart to show annual sales percentage from United States(US)
-            var salesDoughnutChartUS = new CanvasJS.Chart("sales-doughnut-chart-us", {
+        $(function () {
+
+            var totalRevenue = 15341110, totalUsers = 7687036;
+
+            var salesDoughnutChartUS = new CanvasJS.Chart("chart4", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
@@ -115,8 +202,7 @@
                 ]
             });
 
-            // CanvasJS doughnut chart to show annual sales percentage from Netherlands(NL)
-            var salesDoughnutChartNL = new CanvasJS.Chart("sales-doughnut-chart-nl", {
+            var salesDoughnutChartNL = new CanvasJS.Chart("chart5", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
@@ -147,8 +233,7 @@
                 ]
             });
 
-            // CanvasJS doughnut chart to show annual sales percentage from Germany(DE)
-            var salesDoughnutChartDE = new CanvasJS.Chart("sales-doughnut-chart-de", {
+            var salesDoughnutChartDE = new CanvasJS.Chart("chart6", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
@@ -179,8 +264,100 @@
                 ]
             });
 
-            // CanvasJS spline area chart to show pageviews from Jan 2015 - Dec 2015
-            var pageViewsSplineAreaChart = new CanvasJS.Chart("page-views-spline-area-chart", {
+            var salesDoughnutChartUS2 = new CanvasJS.Chart("chart8", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                title: {
+                    fontColor: "#5cb85c",
+                    fontSize: 30,
+                    horizontalAlign: "center",
+                    text: "4345345",
+                    verticalAlign: "center"
+                },
+                toolTip: {
+                    backgroundColor: "#ffffff",
+                    borderThickness: 0,
+                    cornerRadius: 0,
+                    fontColor: "#424242"
+                },
+                data: [
+                    {
+                        explodeOnClick: false,
+                        innerRadius: "96%",
+                        radius: "90%",
+                        startAngle: 270,
+                        type: "doughnut",
+                        dataPoints: [
+                            { y: 47, color: "#c70000", toolTipContent: "United States: $<span>" + CanvasJS.formatNumber(Math.round(47 / 100 * totalRevenue), '#,###,###') + "</span>" },
+                            { y: 53, color: "#424242", toolTipContent: null }
+                        ]
+                    }
+                ]
+            });
+
+            var salesDoughnutChartNL2 = new CanvasJS.Chart("chart9", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                title: {
+                    fontColor: "#5cb85c",
+                    fontSize: 30,
+                    horizontalAlign: "center",
+                    text: "897878",
+                    verticalAlign: "center"
+                },
+                toolTip: {
+                    backgroundColor: "#ffffff",
+                    borderThickness: 0,
+                    cornerRadius: 0,
+                    fontColor: "#424242"
+                },
+                data: [
+                    {
+                        explodeOnClick: false,
+                        innerRadius: "96%",
+                        radius: "90%",
+                        startAngle: 270,
+                        type: "doughnut",
+                        dataPoints: [
+                            { y: 19, color: "#c70000", toolTipContent: "Netherlands: $<span>" + CanvasJS.formatNumber(Math.round(19 / 100 * totalRevenue), '#,###,###') + "</span>" },
+                            { y: 81, color: "#424242", toolTipContent: null }
+                        ]
+                    }
+                ]
+            });
+
+            var salesDoughnutChartDE2 = new CanvasJS.Chart("chart10", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                title: {
+                    fontColor: "#5cb85c",
+                    fontSize: 30,
+                    horizontalAlign: "center",
+                    text: "878451",
+                    verticalAlign: "center"
+                },
+                toolTip: {
+                    backgroundColor: "#ffffff",
+                    borderThickness: 0,
+                    cornerRadius: 0,
+                    fontColor: "#424242"
+                },
+                data: [
+                    {
+                        explodeOnClick: false,
+                        innerRadius: "96%",
+                        radius: "90%",
+                        startAngle: 270,
+                        type: "doughnut",
+                        dataPoints: [
+                            { y: 12, color: "#c70000", toolTipContent: "Netherlands: $<span>" + CanvasJS.formatNumber(Math.round(12 / 100 * totalRevenue), '#,###,###') + "</span>" },
+                            { y: 88, color: "#424242", toolTipContent: null }
+                        ]
+                    }
+                ]
+            });
+
+            var pageViewsSplineAreaChart = new CanvasJS.Chart("chart2", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -229,8 +406,7 @@
                 ]
             });
 
-            // CanvasJS spline area chart to show orders from Jan 2015 - Dec 2015
-            var ordersSplineAreaChart = new CanvasJS.Chart("orders-spline-area-chart", {
+            var ordersSplineAreaChart = new CanvasJS.Chart("chart3", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -279,8 +455,7 @@
                 ]
             });
 
-            // CanvasJS spline area chart to show revenue from Jan 2015 - Dec 2015
-            var revenueSplineAreaChart = new CanvasJS.Chart("revenue-spline-area-chart", {
+            var pageViewsSplineAreaChart2 = new CanvasJS.Chart("chart13", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -307,74 +482,93 @@
                     {
                         color: "#424242",
                         fillOpacity: 1,
-                        lineColor: "#ffffff",
+                        lineColor: "#5cb85c",
                         lineThickness: 3,
                         markerSize: 0,
                         type: "splineArea",
-                        yValueFormatString: "$###,###.##",
                         dataPoints: [
-                            { x: new Date("1 Jan 2015"), y: 868800 },
-                            { x: new Date("1 Feb 2015"), y: 1071550 },
-                            { x: new Date("1 Mar 2015"), y: 1286200 },
-                            { x: new Date("1 Apr 2015"), y: 1106900 },
-                            { x: new Date("1 May 2015"), y: 1033800 },
-                            { x: new Date("1 Jun 2015"), y: 1017160 },
-                            { x: new Date("1 Jul 2015"), y: 1458000 },
-                            { x: new Date("1 Aug 2015"), y: 1165850 },
-                            { x: new Date("1 Sep 2015"), y: 1594150 },
-                            { x: new Date("1 Oct 2015"), y: 1501700 },
-                            { x: new Date("1 Nov 2015"), y: 1588400 },
-                            { x: new Date("1 Dec 2015"), y: 1648600 }
+                            { x: new Date("1 Jan 2015"), y: 2171991 },
+                            { x: new Date("1 Feb 2015"), y: 2678910 },
+                            { x: new Date("1 Mar 2015"), y: 3215487 },
+                            { x: new Date("1 Apr 2015"), y: 2213754 },
+                            { x: new Date("1 May 2015"), y: 2584561 },
+                            { x: new Date("1 Jun 2015"), y: 3178647 },
+                            { x: new Date("1 Jul 2015"), y: 3645041 },
+                            { x: new Date("1 Aug 2015"), y: 2914568 },
+                            { x: new Date("1 Sep 2015"), y: 3985421 },
+                            { x: new Date("1 Oct 2015"), y: 3754219 },
+                            { x: new Date("1 Nov 2015"), y: 3971047 },
+                            { x: new Date("1 Dec 2015"), y: 4121538 }
                         ]
                     }
                 ]
             });
 
-            // CanvasJS doughnut chart to show annual users - new and returning
-            var usersDoughnutChart = new CanvasJS.Chart("users-doughnut-chart", {
-                animationEnabled: true,
-                backgroundColor: "transparent",
-                toolTip: {
-                    backgroundColor: "#000000",
-                    borderThickness: 2,
-                    cornerRadius: 0,
-                    fontColor: "#ffffff",
-                    contentFormatter: function (e) {
-                        return e.entries[0].dataPoint.name + ": " + CanvasJS.formatNumber(e.entries[0].dataPoint.y, '###,###') + " - " + Math.round(e.entries[0].dataPoint.y / totalUsers * 100) + "%"; // calcuting and showing percentage of users inside tooltip
-                    }
-                },
-                data: [
-                    {
-                        innerRadius: "82%",
-                        radius: "100%",
-                        showInLegend: false,
-                        startAngle: 180,
-                        type: "doughnut",
-                        dataPoints: [
-                            { y: 1921757, name: "Returning", color: "#c70000" },
-                            { y: 5765279, name: "New", color: "#424242", exploded: true }
-                        ]
-                    }
-                ]
-            });
-
-            // CanvasJS spline chart to show users - new and returning from Jan 2015 - Dec 2015
-            var usersSplineChart = new CanvasJS.Chart("users-spline-chart", {
+            var ordersSplineAreaChart2 = new CanvasJS.Chart("chart14", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
                     gridThickness: 0,
-                    labelFontColor: "#bbbbbb",
-                    lineColor: "#bbbbbb"
+                    lineThickness: 0,
+                    maximum: new Date("1 Dec 2015"),
+                    minimum: new Date("1 Jan 2015"),
+                    tickLength: 0,
+                    valueFormatString: " "
                 },
                 axisY: {
                     gridThickness: 0,
-                    labelFontColor: "#bbbbbb",
-                    lineColor: "#bbbbbb"
+                    lineThickness: 0,
+                    tickLength: 0,
+                    valueFormatString: " "
+                },
+                toolTip: {
+                    backgroundColor: "#ffffff",
+                    borderThickness: 0,
+                    cornerRadius: 0,
+                    fontColor: "#424242"
+                },
+                data: [
+                    {
+                        color: "#424242",
+                        fillOpacity: 1,
+                        lineColor: "#c70000",
+                        lineThickness: 3,
+                        markerSize: 0,
+                        type: "splineArea",
+                        dataPoints: [
+                            { x: new Date("1 Jan 2015"), y: 17376 },
+                            { x: new Date("1 Feb 2015"), y: 21431 },
+                            { x: new Date("1 Mar 2015"), y: 25724 },
+                            { x: new Date("1 Apr 2015"), y: 22138 },
+                            { x: new Date("1 May 2015"), y: 20676 },
+                            { x: new Date("1 Jun 2015"), y: 25429 },
+                            { x: new Date("1 Jul 2015"), y: 29160 },
+                            { x: new Date("1 Aug 2015"), y: 23317 },
+                            { x: new Date("1 Sep 2015"), y: 31883 },
+                            { x: new Date("1 Oct 2015"), y: 30034 },
+                            { x: new Date("1 Nov 2015"), y: 31768 },
+                            { x: new Date("1 Dec 2015"), y: 41215 }
+                        ]
+                    }
+                ]
+            });
+
+            var usersSplineChart = new CanvasJS.Chart("chart1", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                axisX: {
+                    gridThickness: 0,
+                    labelFontColor: "white",
+                    lineColor: "#424242"
+                },
+                axisY: {
+                    gridThickness: 0,
+                    labelFontColor: "white",
+                    lineColor: "#424242"
                 },
                 legend: {
                     dockInsidePlotArea: true,
-                    fontColor: "#ffffff",
+                    fontColor: "white",
                     fontSize: 16,
                     horizontalAlign: "right",
                     verticalAlign: "top"
@@ -388,7 +582,7 @@
                 },
                 data: [
                     {
-                        color: "#424242",
+                        color: "#bbbbbb",
                         legendMarkerType: "square",
                         legendText: "ГЗ",
                         name: "ГЗ",
@@ -422,7 +616,7 @@
                         ]
                     },
                      {
-                         color: "white",
+                         color: "#5cb85c",
                          legendMarkerType: "square",
                          legendText: "Каталог",
                          name: "Каталог",
@@ -441,8 +635,7 @@
                 ]
             });
 
-            // CanvasJS bar chart to show country wise annual users percentage
-            var usersCountriesBarChart = new CanvasJS.Chart("users-countries-bar-chart", {
+            var usersCountriesBarChart = new CanvasJS.Chart("chart7", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -470,7 +663,7 @@
                 data: [
                     {
                         color: "#424242",
-                        indexLabelFontColor: "#f7f6f6",
+                        indexLabelFontColor: "#5cb85c",
                         indexLabelFontFamily: "calibri",
                         indexLabelFontSize: 18,
                         indexLabelPlacement: "outside",
@@ -484,29 +677,193 @@
                 ]
             });
 
-            jQuery.scrollSpeed(100, 400); // for smooth mouse wheel scrolling
+            var usersCountriesBarChart2 = new CanvasJS.Chart("chart15", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                axisX: {
+                    labelFontColor: "#f7f6f6",
+                    labelFontSize: 18,
+                    lineThickness: 0,
+                    tickThickness: 0
+                },
+                axisY: {
+                    gridThickness: 0,
+                    lineThickness: 0,
+                    tickThickness: 0,
+                    valueFormatString: " "
 
-            // jQuery.inview plugin
+                },
+                toolTip: {
+                    backgroundColor: "#ffffff",
+                    borderThickness: 0,
+                    cornerRadius: 0,
+                    fontColor: "#424242",
+                    contentFormatter: function (e) {
+                        return e.entries[0].dataPoint.label + ": " + CanvasJS.formatNumber(Math.round(e.entries[0].dataPoint.y / 100 * totalUsers), '###,###');
+                    }
+                },
+                data: [
+                    {
+                        color: "#424242",
+                        indexLabelFontColor: "#c70000",
+                        indexLabelFontFamily: "calibri",
+                        indexLabelFontSize: 18,
+                        indexLabelPlacement: "outside",
+                        type: "bar",
+                        dataPoints: [
+                            { y: 5645, indexLabel: "5645", label: "День" },
+                            { y: 56454, indexLabel: "56454", label: "Недель" },
+                            { y: 545899, indexLabel: "545899", label: "Месяц" }
+                        ]
+                    }
+                ]
+            });
+
+            var usersSplineChart2 = new CanvasJS.Chart("chart11", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                axisX: {
+                    gridThickness: 0,
+                    labelFontColor: "white",
+                    lineColor: "#424242"
+                },
+                axisY: {
+                    gridThickness: 0,
+                    labelFontColor: "white",
+                    lineColor: "#424242"
+                },
+                legend: {
+                    dockInsidePlotArea: true,
+                    fontColor: "white",
+                    fontSize: 16,
+                    horizontalAlign: "right",
+                    verticalAlign: "top"
+                },
+                toolTip: {
+                    backgroundColor: "#000000",
+                    borderThickness: 2,
+                    cornerRadius: 0,
+                    fontColor: "#ffffff",
+                    shared: true
+                },
+                data: [
+                    {
+                        color: "#bbbbbb",
+                        legendMarkerType: "square",
+                        legendText: "ГЗ",
+                        name: "ГЗ",
+                        showInLegend: true,
+                        type: "spline",
+                        dataPoints: [
+                            { x: new Date("2011"), y: 3799 },
+                            { x: new Date("2012"), y: 4017 },
+                            { x: new Date("2013"), y: 4323 },
+                            { x: new Date("2014"), y: 3323 },
+                            { x: new Date("2015"), y: 3884 },
+                            { x: new Date("2016"), y: 4767 },
+                            { x: new Date("2017"), y: 5456 }
+                        ]
+                    },
+                    {
+                        color: "#c70000",
+                        legendMarkerType: "square",
+                        legendText: "КЗ",
+                        name: "КЗ",
+                        showInLegend: true,
+                        type: "spline",
+                        dataPoints: [
+                             { x: new Date("2011"), y: 1089 },
+                             { x: new Date("2012"), y: 1945 },
+                             { x: new Date("2013"), y: 1604 },
+                             { x: new Date("2014"), y: 1188 },
+                             { x: new Date("2015"), y: 1228 },
+                             { x: new Date("2016"), y: 1532 },
+                             { x: new Date("2017"), y: 1852 },
+                        ]
+                    },
+                     {
+                         color: "#5cb85c",
+                         legendMarkerType: "square",
+                         legendText: "Каталог",
+                         name: "Каталог",
+                         showInLegend: true,
+                         type: "spline",
+                         dataPoints: [
+                             { x: new Date("2011"), y: 8099 },
+                             { x: new Date("2012"), y: 1335 },
+                             { x: new Date("2013"), y: 9684 },
+                             { x: new Date("2014"), y: 1688 },
+                             { x: new Date("2015"), y: 2988 },
+                             { x: new Date("2016"), y: 1532 },
+                             { x: new Date("2017"), y: 7822 },
+                         ]
+                     }
+                ]
+            });
+
+            // CanvasJS doughnut chart to show annual users - new and returning
+            var usersDoughnutChart = new CanvasJS.Chart("chart12", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                toolTip: {
+                    backgroundColor: "#000000",
+                    borderThickness: 2,
+                    cornerRadius: 0,
+                    fontColor: "#ffffff",
+                    contentFormatter: function (e) {
+                        return e.entries[0].dataPoint.name + ": " + CanvasJS.formatNumber(e.entries[0].dataPoint.y, '###,###') + " - " + Math.round(e.entries[0].dataPoint.y / totalUsers * 100) + "%"; // calcuting and showing percentage of users inside tooltip
+                    }
+                },
+                data: [
+                    {
+                        innerRadius: "82%",
+                        radius: "100%",
+                        showInLegend: false,
+                        startAngle: 180,
+                        type: "doughnut",
+                        dataPoints: [
+                            { y: 1921757, name: "КЗ", color: "#c70000", exploded: true },
+                            { y: 1928977, name: "ГЗ", color: "#5cb85c", exploded: true },
+                            { y: 5765279, name: "Каталог", color: "white", exploded: true }
+                        ]
+                    }
+                ]
+            });
+
+            jQuery.scrollSpeed(100, 400);
+
             $('.inview').one('inview', function (e, isInView) {
                 if (isInView) {
                     switch (this.id) {
-                        case "sales-doughnut-chart-us": salesDoughnutChartUS.render();
+                        case "chart4": salesDoughnutChartUS.render();
                             break;
-                        case "sales-doughnut-chart-nl": salesDoughnutChartNL.render();
+                        case "chart5": salesDoughnutChartNL.render();
                             break;
-                        case "sales-doughnut-chart-de": salesDoughnutChartDE.render();
+                        case "chart6": salesDoughnutChartDE.render();
                             break;
-                        case "page-views-spline-area-chart": pageViewsSplineAreaChart.render();
+                        case "chart8": salesDoughnutChartUS2.render();
                             break;
-                        case "orders-spline-area-chart": ordersSplineAreaChart.render();
+                        case "chart9": salesDoughnutChartNL2.render();
                             break;
-                        case "revenue-spline-area-chart": revenueSplineAreaChart.render();
+                        case "chart10": salesDoughnutChartDE2.render();
                             break;
-                        case "users-doughnut-chart": usersDoughnutChart.render();
+                        case "chart2": pageViewsSplineAreaChart.render();
                             break;
-                        case "users-spline-chart": usersSplineChart.render();
+                        case "chart3": ordersSplineAreaChart.render();
                             break;
-                        case "users-countries-bar-chart": usersCountriesBarChart.render();
+                        case "chart13": pageViewsSplineAreaChart2.render();
+                            break;
+                        case "chart14": ordersSplineAreaChart2.render();
+                            break;
+                        case "chart1": usersSplineChart.render();
+                            break;
+                        case "chart11": usersSplineChart2.render();
+                            break;
+                        case "chart7": usersCountriesBarChart.render();
+                            break;
+                        case "chart15": usersCountriesBarChart2.render();
+                            break;
+                        case "chart12": usersDoughnutChart.render();
                             break;
                     }
                 }

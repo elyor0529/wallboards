@@ -1,0 +1,365 @@
+﻿@{
+    ViewBag.Title = "Центр";
+}
+@section css{
+    <style>
+        .chartdiv {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+}
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">Товарооборот</h4>
+            <div id="chartdiv1" class="chartdiv"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">Экономия денежных средств (ГЗ,КЗ и Каталог)</h4>
+            <div id="chartdiv2" class="chartdiv"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">Кол-во поставщиков на торгах</h4>
+            <div class="row">
+                <div class="col-sm-6 col-lg-6 text-center">
+                    <div class="p-20 chartdiv">
+                        <input class="knob" data-width="100%" data-height="460" data-min="0" data-max="100000" value="40315" data-fgColor="#7266ba" readonly="readonly" />
+                        <h5 class="font-600 text-muted">ГЗ</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6 text-center">
+                    <div class="p-20 chartdiv">
+                        <input class="knob" data-width="100%" data-height="460" data-min="0" data-max="100000" value="17774" data-fgColor="#f76397" readonly="readonly" />
+                        <h5 class="font-600 text-muted">КЗ</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">Кол-во торгов в разрезе платформ (КЗ, ГЗ и Каталог)</h4>
+            <div class="bar-chart">
+                <svg class="chartdiv"></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">Среднее кол-во участников за каждые лот</h4>
+            <div id="chartdiv5" class="chartdiv"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">ТОП 3 продаваемый товары</h4>
+            <div id="chartdiv6" class="chartdiv"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">Кол-во сотрудников</h4>
+            <div id="chartdiv7" class="chartdiv"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">Кол-во звонков за день, за недель, за месяц</h4>
+            <div id="chartdiv8" class="chartdiv"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-box">
+            <h4 class="m-t-0 m-b-20 header-title">Доля платформ (по товарообороту) </h4>
+            <div id="chartdiv9" class="chartdiv"></div>
+        </div>
+    </div>
+
+</div>
+
+@section js{
+
+    <!-- EASY PIE CHART JS -->
+    <script src="/assets/plugins/jquery.easy-pie-chart/dist/easypiechart.min.js"></script>
+    <script src="/assets/plugins/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <script src="/assets/pages/easy-pie-chart.init.js"></script>
+
+    <!-- KNOB JS -->
+    <!--[if IE]>
+    <script type="text/javascript" src="/assets/plugins/jquery-knob/excanvas.js"></script>
+    <![endif]-->
+    <script src="/assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+    <!--Morris Chart-->
+    <script src="/assets/plugins/morris/morris.min.js"></script>
+    <script src="/assets/plugins/raphael/raphael-min.js"></script>
+    <script src="/assets/pages/morris.init.js"></script>
+    <script src="/assets/plugins/jquery-circliful/js/jquery.circliful.min.js"></script>
+
+    <!-- circliful Chart -->
+    <script src="/assets/plugins/jquery-circliful/js/jquery.circliful.min.js"></script>
+    <script src="/assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline charts -->
+    <script src="/assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="/assets/pages/jquery.charts-sparkline.js"></script>
+
+    <!-- Pie chart -->
+    <script src="/assets//plugins/flot-chart/jquery.flot.js"></script>
+    <script src="/assets//plugins/flot-chart/jquery.flot.time.js"></script>
+    <script src="/assets//plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
+    <script src="/assets//plugins/flot-chart/jquery.flot.resize.js"></script>
+    <script src="/assets//plugins/flot-chart/jquery.flot.pie.js"></script>
+    <script src="/assets//plugins/flot-chart/jquery.flot.selection.js"></script>
+    <script src="/assets//plugins/flot-chart/jquery.flot.stack.js"></script>
+    <script src="/assets//plugins/flot-chart/jquery.flot.crosshair.js"></script>
+
+    <!-- Nvd3 js -->
+    <script src="/assets/plugins/d3/d3.min.js"></script>
+    <script src="/assets/plugins/nvd3/build/nv.d3.min.js"></script>
+
+    <!--Highcharts-->
+    <script src="/Assets/plugins/Highcharts/highcharts.js"></script>
+    @*<script src="~/Assets/plugins/Highcharts/themes/dark-unica.js"></script>*@
+
+    <script>
+
+        Highcharts.chart('chartdiv1', {
+            title: {
+                text: ''
+            },
+            chart: {
+                type: 'bar'
+            },
+            xAxis: {
+                categories: ['2011', '2012', '2013', '2014', '2015', '2016', '2017'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '',
+                },
+                labels: {
+                    enabled: false
+                }
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [{
+                name: 'Catalog',
+                data: [0, 0, 0, 0, 0, 0, 20148534906.85]
+            }, {
+                name: 'DXarid',
+                data: [133, 156, 947, 408, 58, 3, 635]
+            }, {
+                name: 'EXarid',
+                data: [1052, 954, 4250, 740, 414524273158.41, 203]
+            }]
+        });
+
+        $(function () {
+
+            ////chart-1
+            //var $barData = [
+            //    { y: '2016', a: 0, b: 0, c: 0 },
+            //    { y: '2017', a: 317, b: 42, c: 475 },
+            //];
+            //MorrisCharts.prototype.createBarChart('morris-bar-example', $barData, 'y', ['a', 'b', 'c'], ['ГЗ', 'КЗ', 'Каталог'], ["#3bafda", "#dcdcdc", "#80deea"]);
+
+            //chart-3
+            $(".knob").knob();
+            $('.circliful-chart').circliful();
+
+            ////chart-4
+            //nv.addGraph(function () {
+            //    var barChart = nv.models.discreteBarChart().x(function (d) {
+            //        return d.label;
+            //    }).y(function (d) {
+            //        return d.value;
+            //    }).showValues(true).duration(250).showYAxis(false);
+            //    d3.select('.bar-chart svg').datum([{
+            //        values: [{
+            //            'label': 'ГЗ',
+            //            'value': 2293025,
+            //            'color': '#ef5350'
+            //        }, {
+            //            'label': 'КЗ',
+            //            'value': 65514,
+            //            'color': '#3DDCF7'
+            //        }, {
+            //            'label': 'Каталог',
+            //            'value': 138459,
+            //            'color': '#ffaa00'
+            //        }]
+            //    }]).call(barChart);
+            //    nv.utils.windowResize(barChart.update);
+
+            //    return barChart;
+            //});
+
+        });
+
+        //var chart4 = AmCharts.makeChart("chartdiv4", {
+        //    "type": "serial",
+        //    "theme": "dark",
+        //    "startDuration": 2,
+        //    "dataProvider": [{
+        //        "name": "ГЗ",
+        //        "open": 0,
+        //        "close": 2293025,
+        //        "color": "#54cb6a"
+        //    }, {
+        //        "name": "КЗ",
+        //        "open": 0,
+        //        "close": 65514,
+        //        "color": "#cc4b48"
+        //    }, {
+        //        "name": "Каталог",
+        //        "open": 0,
+        //        "close": 138459,
+        //        "color": "#1c8ceb"
+        //    }],
+        //    "valueAxes": [{
+        //        "labelsEnabled": false
+        //    }],
+        //    "startDuration": 1,
+        //    "depth3D": 50,
+        //    "angle": 50,
+        //    "graphs": [{
+        //        "balloonText": "[[category]]:[[value]] шт.",
+        //        "colorField": "color",
+        //        "fillAlphas": 0.8,
+        //        "lineColor": "#BBBBBB",
+        //        "openField": "open",
+        //        "type": "column",
+        //        "valueField": "close",
+        //        "topRadius": 0.5,
+        //    }],
+        //    "columnWidth": 0.6,
+        //    "categoryField": "name",
+        //    "categoryAxis": {
+        //        "gridPosition": "start",
+        //        "axisAlpha": 0,
+        //        "gridAlpha": 0.1
+        //    }
+        //});
+
+        //var chart6 = AmCharts.makeChart("chartdiv6", {
+        //    "theme": "dark",
+        //    "type": "serial",
+        //    "startDuration": 2,
+        //    "dataProvider": [{
+        //        "product": "Макароны",
+        //        "gz": 140298,
+        //        "kz": 0,
+        //        "catalog": 0,
+        //    }, {
+        //        "product": "Печенье",
+        //        "gz": 137607,
+        //        "kz": 0,
+        //        "catalog": 0,
+        //    },{
+        //        "product": "Рис",
+        //        "gz": 130880,
+        //        "kz": 0,
+        //        "catalog": 0,
+        //    }, {
+        //        "product": "Кондиционер",
+        //        "gz": 0,
+        //        "kz": 231,
+        //        "catalog": 0,
+        //    }, {
+        //        "product": "Подшипник",
+        //        "gz": 0,
+        //        "kz": 195,
+        //        "catalog": 0,
+        //    }, {
+        //        "product": "Чехол изоляционный",
+        //        "gz": 0,
+        //        "kz": 107,
+        //        "catalog": 0,
+        //    }, {
+        //        "product": "Краска",
+        //        "gz": 0,
+        //        "kz": 0,
+        //        "catalog": 66311,
+        //    }, {
+        //        "product": "Цемент",
+        //        "gz": 0,
+        //        "kz": 0,
+        //        "catalog": 19499,
+        //    },
+        //    {
+        //        "product": "Стекло",
+        //        "gz": 0,
+        //        "kz": 0,
+        //        "catalog": 11491,
+        //    }, ],
+        //    "valueAxes": [{
+        //        "labelsEnabled": false,
+        //        "gridThickness": 0,
+        //        "dashLength": 0
+        //    }],
+        //    "startDuration": 1,
+        //    "graphs": [{
+        //        "balloonText": "ГЗ <b>[[category]]</b>:[[value]] шт.",
+        //        "fillAlphas": 0.9,
+        //        "lineAlpha": 0.2,
+        //        "title": "ГЗ",
+        //        "type": "column",
+        //        "valueField": "gz",
+        //        "lineThickness": 0,
+        //    }, {
+        //        "balloonText": "КЗ <b>[[category]]</b>:[[value]] шт.",
+        //        "fillAlphas": 0.9,
+        //        "lineAlpha": 0.2,
+        //        "title": "КЗ",
+        //        "type": "column",
+        //        "valueField": "kz"
+        //    },{
+        //        "balloonText": "Каталог <b>[[category]]</b>:[[value]] шт.",
+        //         "fillAlphas": 0.9,
+        //         "lineAlpha": 0.2,
+        //         "title": "Каталог",
+        //         "type": "column",
+        //         "valueField": "catalog"
+        //     }],
+        //    "plotAreaFillAlphas": 0.1,
+        //    "depth3D": 120,
+        //    "angle": 50,
+        //    "categoryField": "product",
+        //    "labelsEnabled": false,
+        //    "categoryAxis": {
+        //        "gridPosition": "start",
+        //        "labelRotation": 45,
+        //        "gridThickness": 0
+        //    },
+        //});
+
+    </script>
+}

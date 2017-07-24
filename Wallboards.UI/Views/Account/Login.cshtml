@@ -1,4 +1,6 @@
-﻿
+﻿@{ 
+    Layout = null;
+}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,11 +24,12 @@
     <div class="container">
 
         <form class="form-signin" action="@Url.Action("Login")" method="post">
-            <h2 class="form-signin-heading">Пожалуйста, войдите в систему</h2>
+            @Html.AntiForgeryToken()
+            <h2 class="form-signin-heading text-center">Wallboards</h2>
             <label for="inputEmail" class="sr-only">Имя пользователя</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Имя пользователя" required autofocus>
+            <input type="text" id="inputEmail" name="UserName" class="form-control" placeholder="Имя пользователя" required autofocus>
             <label for="inputPassword" class="sr-only">Пароль</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required> 
+            <input type="password" id="inputPassword" name="Password" class="form-control" placeholder="Пароль" required> 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
         </form>
 

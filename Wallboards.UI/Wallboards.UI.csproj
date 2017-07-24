@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ITController.cs" />
     <Compile Include="Controllers\CenterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DbContext.cs" />
@@ -148,6 +149,19 @@
     <Compile Include="SessionAuthorize.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap-grid.min.css" />
+    <Content Include="Assets\css\bootstrap-reboot.min.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\dashboard.css" />
+    <Content Include="Assets\fonts\font-roboto.css" />
+    <Content Include="Assets\css\signin.css" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\canvasjs.min.js" />
+    <Content Include="Assets\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="Assets\js\jquery-3.1.0.min.js" />
+    <Content Include="Assets\js\jquery.inview.min.js" />
+    <Content Include="Assets\js\jquery.scrollspeed.min.js" />
+    <Content Include="Assets\js\tether.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -161,7 +175,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -173,7 +186,18 @@
     <Content Include="Views\Center\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\js\" />
+    <Content Include="Assets\fonts\roboto-v15-latin-300.woff" />
+    <Content Include="Assets\fonts\roboto-v15-latin-300.woff2" />
+    <Content Include="Assets\fonts\roboto-v15-latin-500.woff" />
+    <Content Include="Assets\fonts\roboto-v15-latin-500.woff2" />
+    <Content Include="Assets\fonts\roboto-v15-latin-regular.woff" />
+    <Content Include="Assets\fonts\roboto-v15-latin-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\IT\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

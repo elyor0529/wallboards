@@ -11,12 +11,12 @@ namespace Wallboards.UI.Controllers
 {
     public class HomeController : BaseController
     {
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             //var result1 = await Gz.Database.SqlQuery<decimal?>(@"select count(*) from USER_LIST  where TYPE_CLIENT=2 and trunc(ACCREDITATION_DATE)>=to_date('01.01.2011','dd.mm.yyyy')").FirstOrDefaultAsync();
             //var result2 = await Kz.Database.SqlQuery<decimal?>(@"select count(*) count from USER_LIST  where TYPE_CLIENT=2 and trunc(ACCREDITATION_DATE)>=to_date('01.01.2011','dd.mm.yyyy');").FirstOrDefaultAsync();
 
-            return RedirectToAction("Index","Center");
+            return View();
         }
     }
 }

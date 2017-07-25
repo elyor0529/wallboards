@@ -1,18 +1,9 @@
 ﻿namespace Wallboards.UI.Models
 {
     public class UserData
-    { 
-        public UserData()
-        {
-        }
-
-        public UserData(string id, string fio)
-        {
-            Id = id;
-            FIO = fio; 
-        }
-
-        public string Id { get; set; } 
-        public string FIO { get; set; }
+    {  
+        public string UserName { get; set; } 
+        public string Password { get; set; }
+        public string Role { get; set; }
     }
 }

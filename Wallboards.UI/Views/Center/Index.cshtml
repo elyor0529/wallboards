@@ -73,38 +73,37 @@
 
         <div class="col-md-4">
             <h3>ТОП 3 товары </h3>
-
-            <div class="bar-chart inview" id="chart7"></div>
-        </div>
-
-        <div class="col-md-4">
-            <h3>Экономия (млрд.сум)</h3>
-
+ 
             <div class="row">
                 <div class="col-md-3">
                     <div class="doughnut-chart inview" id="chart8"></div>
                     <br />
-                    <h3 class="align-center">КЗ</h3>
+                    <h4 class="align-center">Кондиционер</h4>
                 </div>
 
                 <div class="col-md-3">
                     <div class="doughnut-chart inview" id="chart9"></div>
                     <br />
-                    <h3 class="align-center">ГЗ</h3>
+                    <h4 class="align-center">Автопогрузчик</h4>
                 </div>
 
                 <div class="col-md-3">
                     <div class="doughnut-chart inview" id="chart10"></div>
                     <br />
-                    <h3 class="align-center">Каталог</h3>
+                    <h4 class="align-center">Краска</h4>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4">
-            <h3>Среднее кол-во участников</h3>
+            <h3>Экономия (млрд.сум)</h3>
+            
+            <div class="spline-chart inview" id="chart16"></div>
+        </div>
 
-            <div class="spline-chart inview" id="chart11"></div>
+        <div class="col-md-4">
+            <h3>Среднее кол-во участников</h3>
+            <div class="bar-chart inview" id="chart11"></div> 
         </div>
 
     </div>
@@ -224,7 +223,7 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 4, color: "#c70000" },
+                            { y: 4, color: "white" },
                             { y: 96, color: "#424242" }
                         ]
                     }
@@ -249,7 +248,7 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 12, color: "white" },
+                            { y: 12, color: "#c70000" },
                             { y: 88, color: "#424242" }
                         ]
                     }
@@ -263,7 +262,7 @@
                     fontColor: "#424242",
                     fontSize: 24,
                     horizontalAlign: "center",
-                    text: "105,2",
+                    text: "12%",
                     verticalAlign: "center"
                 },
                 data: [
@@ -274,8 +273,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 49, color: "#5cb85c" },
-                            { y: 51, color: "#424242" }
+                            { y: 22, color: "#c70000" },
+                            { y: 78, color: "#424242" }
                         ]
                     }
                 ]
@@ -288,7 +287,7 @@
                     fontColor: "#424242",
                     fontSize: 24,
                     horizontalAlign: "center",
-                    text: "78,8",
+                    text: "11%",
                     verticalAlign: "center"
                 },
                 data: [
@@ -299,8 +298,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 37, color: "#c70000" },
-                            { y: 63, color: "#424242" }
+                            { y: 20, color: "white" },
+                            { y: 80, color: "#424242" }
                         ]
                     }
                 ]
@@ -313,7 +312,7 @@
                     fontColor: "#424242",
                     fontSize: 24,
                     horizontalAlign: "center",
-                    text: "27,9",
+                    text: "30%",
                     verticalAlign: "center"
                 },
                 data: [
@@ -324,8 +323,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 13, color: "white" },
-                            { y: 87, color: "#424242" }
+                            { y: 56, color: "#5cb85c" },
+                            { y: 44, color: "#424242" }
                         ]
                     }
                 ]
@@ -438,89 +437,75 @@
                 },
                 data: [
                     {
-                        color: "#bbbbbb",
-                        legendMarkerType: "square",
-                        legendText: "ГЗ",
-                        name: "ГЗ",
-                        showInLegend: true,
-                        type: "spline",
+                        type: "column",
+                        indexLabelPlacement: "outside",
+                        indexLabel: "{y}",
+                        indexLabelColor: "white",
+                        indexLabelFontSize: 24,
+                        indexLabelOrientation: "horizontal",
                         dataPoints: [
-                            { x: new Date("2011"), y: 0 },
-                            { x: new Date("2012"), y: 0 },
-                            { x: new Date("2013"), y: 0 },
-                            { x: new Date("2014"), y: 0 },
-                            { x: new Date("2015"), y: 0 },
-                            { x: new Date("2016"), y: 0 },
-                            { x: new Date("2017"), y: 300.1 }
+                            { label: "ГЗ", y:  355.6,color:"#5cb85c"},
+                            { label: "КЗ", y: 300.1 ,color:"#c70000"},
+                            { label: "Каталог", y: 48.4 ,color:"white"}
                         ]
-                    },
-                    {
-                        color: "#c70000",
-                        legendMarkerType: "square",
-                        legendText: "КЗ",
-                        name: "КЗ",
-                        showInLegend: true,
-                        type: "spline",
+                    } 
+                ]
+            });
+            
+            var chart16 = new CanvasJS.Chart("chart16", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                axisX: {
+                    gridThickness: 0,
+                    labelFontColor: "white",
+                    lineColor: "#424242"
+                },
+                axisY: {
+                    gridThickness: 0,
+                    labelFontColor: "white",
+                    lineColor: "#424242",
+                },
+                legend: {
+                    dockInsidePlotArea: true,
+                    fontColor: "white",
+                    fontSize: 16,
+                    horizontalAlign: "right",
+                    verticalAlign: "top"
+                },
+                data: [
+                    {  
+                        type: "column",
+                        indexLabelPlacement: "outside",
+                        indexLabel: "{y}",
+                        indexLabelColor: "white",
+                        indexLabelFontSize: 24,
+                        indexLabelOrientation: "horizontal",
                         dataPoints: [
-                             { x: new Date("2011"), y: 0 },
-                             { x: new Date("2012"), y: 0 },
-                             { x: new Date("2013"), y: 0 },
-                             { x: new Date("2014"), y: 0 },
-                             { x: new Date("2015"), y: 0 },
-                             { x: new Date("2016"), y: 0 },
-                             { x: new Date("2017"), y: 355.6 },
+                            { label: "ГЗ", y:  105.2,color:"#5cb85c"},
+                            { label: "КЗ", y: 78.8 ,color:"#c70000"},
+                            { label: "Каталог", y: 27.9 ,color:"white"}
                         ]
-                    },
-                     {
-                         color: "#5cb85c",
-                         legendMarkerType: "square",
-                         legendText: "Каталог",
-                         name: "Каталог",
-                         showInLegend: true,
-                         type: "spline",
-                         dataPoints: [
-                             { x: new Date("2011"), y: 0 },
-                             { x: new Date("2012"), y: 0 },
-                             { x: new Date("2013"), y: 0 },
-                             { x: new Date("2014"), y: 0 },
-                             { x: new Date("2015"), y: 0 },
-                             { x: new Date("2016"), y: 0 },
-                             { x: new Date("2017"), y: 48.4 },
-                         ]
-                     }
+                    } 
                 ]
             });
 
             var chart7 = new CanvasJS.Chart("chart7", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
-                axisX: {
-                    labelFontColor: "#f7f6f6",
-                    labelFontSize: 18,
-                    lineThickness: 0,
-                    tickThickness: 0
-                },
-                axisY: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    tickThickness: 0,
-                    valueFormatString: " "
-                },
                 data: [
                     {
-                        color: "#424242",
-                        indexLabelFontColor: "#5cb85c",
-                        indexLabelFontFamily: "calibri",
-                        indexLabelFontSize: 24,
-                        indexLabelPlacement: "outside",
-                        type: "bar",
+                        innerRadius: "60%",
+                        radius: "100%",
+                        showInLegend: false,
+                        startAngle: 180,
+                        type: "doughnut",
                         dataPoints: [
-                            { y: 12, indexLabel: "Кондиционер", label: "ГЗ" },
-                            { y: 11, indexLabel: "Автопогрузчик с кабиной", label: "КЗ" },
-                            { y: 30, indexLabel: "Краска", label: "Каталог" }
+                            { y: 12, name: "ГЗ", color: "white" },
+                            { y: 11, name: "КЗ", color: "#c70000" },
+                            { y: 30, name: "Каталог", color: "#5cb85c" }
                         ]
                     }
-                ]
+                ] 
             });
 
             var chart15 = new CanvasJS.Chart("chart15", {
@@ -555,78 +540,35 @@
                 ]
             });
 
-            var chart11 = new CanvasJS.Chart("chart11", {
+            var chart11 = new CanvasJS.Chart("chart11", { 
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
-                    gridThickness: 0,
-                    labelFontColor: "white",
-                    lineColor: "#424242"
+                    labelFontColor: "#f7f6f6",
+                    labelFontSize: 18,
+                    lineThickness: 0,
+                    tickThickness: 0
                 },
                 axisY: {
                     gridThickness: 0,
-                    labelFontColor: "white",
-                    lineColor: "#424242"
-                },
-                legend: {
-                    dockInsidePlotArea: true,
-                    fontColor: "white",
-                    fontSize: 16,
-                    horizontalAlign: "right",
-                    verticalAlign: "top"
+                    lineThickness: 0,
+                    tickThickness: 0,
+                    valueFormatString: " "
                 },
                 data: [
                     {
-                        color: "#bbbbbb",
-                        legendMarkerType: "square",
-                        legendText: "ГЗ",
-                        name: "ГЗ",
-                        showInLegend: true,
-                        type: "spline",
+                        color: "#424242",
+                        indexLabelFontColor: "#5cb85c",
+                        indexLabelFontFamily: "calibri",
+                        indexLabelFontSize: 24,
+                        indexLabelPlacement: "outside",
+                        type: "bar",
                         dataPoints: [
-                              { x: new Date("2011"), y: 0 },
-                             { x: new Date("2012"), y: 0 },
-                             { x: new Date("2013"), y: 0 },
-                             { x: new Date("2014"), y: 0 },
-                             { x: new Date("2015"), y: 0 },
-                             { x: new Date("2016"), y: 0 },
-                            { x: new Date("2017"), y: 11 }
+                            { y: 11, indexLabel: "11", label: "ГЗ" },
+                            { y: 9, indexLabel: "9", label: "КЗ" },
+                            { y: 7, indexLabel: "7", label: "Каталог" }
                         ]
-                    },
-                    {
-                        color: "#c70000",
-                        legendMarkerType: "square",
-                        legendText: "КЗ",
-                        name: "КЗ",
-                        showInLegend: true,
-                        type: "spline",
-                        dataPoints: [
-                              { x: new Date("2011"), y: 0 },
-                             { x: new Date("2012"), y: 0 },
-                             { x: new Date("2013"), y: 0 },
-                             { x: new Date("2014"), y: 0 },
-                             { x: new Date("2015"), y: 0 },
-                             { x: new Date("2016"), y: 0 },
-                             { x: new Date("2017"), y: 9 },
-                        ]
-                    },
-                     {
-                         color: "#5cb85c",
-                         legendMarkerType: "square",
-                         legendText: "Каталог",
-                         name: "Каталог",
-                         showInLegend: true,
-                         type: "spline",
-                         dataPoints: [
-                               { x: new Date("2011"), y: 0 },
-                             { x: new Date("2012"), y: 0 },
-                             { x: new Date("2013"), y: 0 },
-                             { x: new Date("2014"), y: 0 },
-                             { x: new Date("2015"), y: 0 },
-                             { x: new Date("2016"), y: 0 },
-                             { x: new Date("2017"), y: 7 },
-                         ]
-                     }
+                    }
                 ]
             });
 
@@ -677,6 +619,8 @@
                         case "chart7": chart7.render();
                             break;
                         case "chart15": chart15.render();
+                            break;
+                        case "chart16": chart16.render();
                             break;
                         case "chart12": chart12.render();
                             break;

@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Collections.Generic;
+using System.Web;
 using Wallboards.UI.Models;
 
 namespace Wallboards.UI.Helpers
@@ -6,11 +7,17 @@ namespace Wallboards.UI.Helpers
     public static class MembershipHelper
     {
         private const string USER_KEY = "_USER_";
-         
-        public static UserData User
+        
+        public static IList<UserData> Users=new List<UserData>();
+
+        static MembershipHelper()
         {
-            get { return (UserData)HttpContext.Current.Session[USER_KEY]; }
+            Users.Add(new UserData{Role = Roles.CENTER,UserName = "center",Password = "123456"});
+            Users.Add(new UserData{Role = Roles.IT,UserName = "it",Password = "123456"});
+            Users.Add(new UserData{Role = Roles.ANALITICA,UserName = "analitica",Password = "123456"}); 
         }
+        
+        public static UserData User => (UserData)HttpContext.Current.Session[USER_KEY];
 
         public static void SignIn(UserData data)
         {

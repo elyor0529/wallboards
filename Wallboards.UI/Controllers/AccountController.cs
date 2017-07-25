@@ -30,18 +30,16 @@ namespace Wallboards.UI.Controllers
             {
                 return View(model);
             }
-
-            if(model.UserName!="admin" || model.Password!="123456")
+            var user = MembershipHelper.Users.FirstOrDefault(a =>a.UserName == model.UserName && a.Password== model.Password);
+            
+            if(user==null)
             {
                 ModelState.AddModelError("", "Неверное имя пользователя или пароль");
 
                 return View(model);
             }
 
-            MembershipHelper.SignIn(new UserData
-            {
-                FIO = model.UserName
-            });
+            MembershipHelper.SignIn(user);
 
             await Task.Delay(0);
 

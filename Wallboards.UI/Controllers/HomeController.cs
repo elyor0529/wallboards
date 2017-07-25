@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Wallboards.UI.Helpers;
 
 namespace Wallboards.UI.Controllers
 {
@@ -13,10 +14,18 @@ namespace Wallboards.UI.Controllers
     {
         public ActionResult Index()
         {
-            //var result1 = await Gz.Database.SqlQuery<decimal?>(@"select count(*) from USER_LIST  where TYPE_CLIENT=2 and trunc(ACCREDITATION_DATE)>=to_date('01.01.2011','dd.mm.yyyy')").FirstOrDefaultAsync();
-            //var result2 = await Kz.Database.SqlQuery<decimal?>(@"select count(*) count from USER_LIST  where TYPE_CLIENT=2 and trunc(ACCREDITATION_DATE)>=to_date('01.01.2011','dd.mm.yyyy');").FirstOrDefaultAsync();
+            
+            switch (MembershipHelper.User.Role)
+            {
+                case Roles.CENTER:
+                    return RedirectToAction("Index", "Center");
+                case Roles.IT:
+                    return RedirectToAction("Index", "IT");
+                case Roles.ANALITICA:
+                    return RedirectToAction("Index", "Analitica");
+            }
 
-            return View();
+            return HttpNotFound();
         }
     }
 }

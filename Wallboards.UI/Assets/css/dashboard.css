@@ -11,7 +11,7 @@ body {
     line-height: 1.5;
     padding-bottom: 3.5rem;
     /*padding-top: 3.5rem;*/
-    padding-top: 70px;
+    padding-top: 20px;
 }
 
 /*
@@ -109,22 +109,22 @@ hr {
 }
 
 .doughnut-chart {
-    height: 150px !important;
+    height: 200px !important;
     width: 100%;
 }
 
 .area-chart {
-    height: 100px !important;
+    height: 150px !important;
     width: 100%;
 }
 
 .spline-chart {
-    height: 200px !important;
+    height: 250px !important;
     width: 100%;
 }
 
 .bar-chart ,.column-chart{
-    height: 200px !important;
+    height: 250px !important;
     width: 100%;
 }
 

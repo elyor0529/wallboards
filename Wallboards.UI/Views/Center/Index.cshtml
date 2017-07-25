@@ -11,25 +11,25 @@
     <div class="row">
 
         <div class="col-md-4">
-            <h3>Товарооборот</h3>
+            <h3>Товарооборот (млрд.сум)</h3>
 
             <div class="spline-chart inview" id="chart1"></div>
         </div>
 
         <div class="col-md-4">
-            <h3>Кол-во поставщиков на торгах</h3>
+            <h3>Кол-во поставщиков тысяч</h3>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card card-block">
                         <h5 class="card-title">ГЗ</h5>
-                        <h2>38,435,184</h2>
+                        <h2>44 465</h2>
                         <div class="area-chart inview" id="chart2"></div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card card-block">
                         <h5 class="card-title">КЗ</h5>
-                        <h2>320,151</h2>
+                        <h2>19 498</h2>
                         <div class="area-chart inview" id="chart3"></div>
                     </div>
                 </div>
@@ -37,14 +37,9 @@
         </div>
 
         <div class="col-md-4">
-            <h3>Кол-во торгов в разрезе платформ </h3>
+            <h3>Кол-во сделок в день </h3>
 
             <div class="row">
-                <div class="col-md-3">
-                    <div class="doughnut-chart inview" id="chart4"></div>
-                    <br />
-                    <h3 class="align-center">КЗ</h3>
-                </div>
 
                 <div class="col-md-3">
                     <div class="doughnut-chart inview" id="chart5"></div>
@@ -53,10 +48,17 @@
                 </div>
 
                 <div class="col-md-3">
+                    <div class="doughnut-chart inview" id="chart4"></div>
+                    <br />
+                    <h3 class="align-center">КЗ</h3>
+                </div>
+
+                <div class="col-md-3">
                     <div class="doughnut-chart inview" id="chart6"></div>
                     <br />
                     <h3 class="align-center">Каталог</h3>
                 </div>
+
             </div>
         </div>
     </div>
@@ -66,13 +68,13 @@
     <div class="row">
 
         <div class="col-md-4">
-            <h3>ТОП 3 продаваемый товары </h3>
+            <h3>ТОП 3 товары </h3>
 
             <div class="bar-chart inview" id="chart7"></div>
         </div>
 
         <div class="col-md-4">
-            <h3>Экономия денежных средств </h3>
+            <h3>Экономия (млрд.сум)</h3>
 
             <div class="row">
                 <div class="col-md-3">
@@ -96,7 +98,7 @@
         </div>
 
         <div class="col-md-4">
-            <h3>Среднее кол-во участников за каждые лот </h3>
+            <h3>Среднее кол-во участников</h3>
 
             <div class="spline-chart inview" id="chart11"></div>
         </div>
@@ -108,19 +110,19 @@
     <div class="row">
 
         <div class="col-md-4">
-            <h3>Кол-во сотрудников </h3>
+            <h3>Кол-во сотрудников</h3>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card card-block">
-                        <h5 class="card-title">ИТ</h5>
-                        <h2>385,14</h2>
+                        <h5 class="card-title">Специалисти</h5>
+                        <h2>6</h2>
                         <div class="area-chart inview" id="chart13"></div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card card-block">
-                        <h5 class="card-title">Центр</h5>
-                        <h2>320,11</h2>
+                        <h5 class="card-title">Модераторы</h5>
+                        <h2>10</h2>
                         <div class="area-chart inview" id="chart14"></div>
                     </div>
                 </div>
@@ -128,29 +130,29 @@
         </div>
 
         <div class="col-md-4">
-            <h3>Кол-во звонков </h3>
-            <div class="bar-chart inview" id="chart15"></div> 
+            <h3>Кол-во звонков в день </h3>
+            <div class="bar-chart inview" id="chart15"></div>
         </div>
 
         <div class="col-md-4">
             <h3>Доля платформ</h3>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div class="bar-chart inview" id="chart12"></div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <ul style="list-style:none;">
                         <li>
-                            <h3 style="color:#c70000">КЗ - 1921757</h3>
-                        </li>   
-                        <li>
-                            <h3 style="color:#5cb85c">ГЗ - 1928977</h3>
+                            <h3 style="color:#5cb85c">ГЗ - 46%</h3>
                         </li>
                         <li>
-                            <h3 style="color:white;">Каталог - 5765279</h3>
+                            <h3 style="color:#c70000">КЗ - 39%</h3>
+                        </li>
+                        <li>
+                            <h3 style="color:white;">Каталог - 15%</h3>
                         </li>
                     </ul>
-                </div> 
+                </div>
             </div>
 
         </div>
@@ -169,8 +171,6 @@
 
         $(function () {
 
-            var totalRevenue = 15341110, totalUsers = 7687036;
-
             var salesDoughnutChartUS = new CanvasJS.Chart("chart4", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
@@ -178,14 +178,8 @@
                     fontColor: "#848484",
                     fontSize: 30,
                     horizontalAlign: "center",
-                    text: "4345345",
+                    text: "2300",
                     verticalAlign: "center"
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
                 },
                 data: [
                     {
@@ -195,8 +189,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 47, color: "#c70000", toolTipContent: "United States: $<span>" + CanvasJS.formatNumber(Math.round(47 / 100 * totalRevenue), '#,###,###') + "</span>" },
-                            { y: 53, color: "#424242", toolTipContent: null }
+                            { y: 47, color: "#c70000" },
+                            { y: 53, color: "#424242" }
                         ]
                     }
                 ]
@@ -209,14 +203,8 @@
                     fontColor: "#848484",
                     fontSize: 30,
                     horizontalAlign: "center",
-                    text: "897878",
+                    text: "110",
                     verticalAlign: "center"
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
                 },
                 data: [
                     {
@@ -226,8 +214,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 19, color: "#c70000", toolTipContent: "Netherlands: $<span>" + CanvasJS.formatNumber(Math.round(19 / 100 * totalRevenue), '#,###,###') + "</span>" },
-                            { y: 81, color: "#424242", toolTipContent: null }
+                            { y: 19, color: "#c70000" },
+                            { y: 81, color: "#424242" }
                         ]
                     }
                 ]
@@ -240,14 +228,8 @@
                     fontColor: "#848484",
                     fontSize: 30,
                     horizontalAlign: "center",
-                    text: "878451",
+                    text: "340",
                     verticalAlign: "center"
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
                 },
                 data: [
                     {
@@ -257,8 +239,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 12, color: "#c70000", toolTipContent: "Netherlands: $<span>" + CanvasJS.formatNumber(Math.round(12 / 100 * totalRevenue), '#,###,###') + "</span>" },
-                            { y: 88, color: "#424242", toolTipContent: null }
+                            { y: 12, color: "#c70000" },
+                            { y: 88, color: "#424242" }
                         ]
                     }
                 ]
@@ -271,14 +253,8 @@
                     fontColor: "#5cb85c",
                     fontSize: 30,
                     horizontalAlign: "center",
-                    text: "4345345",
+                    text: "105,2",
                     verticalAlign: "center"
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
                 },
                 data: [
                     {
@@ -288,8 +264,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 47, color: "#c70000", toolTipContent: "United States: $<span>" + CanvasJS.formatNumber(Math.round(47 / 100 * totalRevenue), '#,###,###') + "</span>" },
-                            { y: 53, color: "#424242", toolTipContent: null }
+                            { y: 47, color: "#c70000" },
+                            { y: 53, color: "#424242" }
                         ]
                     }
                 ]
@@ -302,14 +278,8 @@
                     fontColor: "#5cb85c",
                     fontSize: 30,
                     horizontalAlign: "center",
-                    text: "897878",
+                    text: "78,8",
                     verticalAlign: "center"
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
                 },
                 data: [
                     {
@@ -319,8 +289,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 19, color: "#c70000", toolTipContent: "Netherlands: $<span>" + CanvasJS.formatNumber(Math.round(19 / 100 * totalRevenue), '#,###,###') + "</span>" },
-                            { y: 81, color: "#424242", toolTipContent: null }
+                            { y: 19, color: "#c70000" },
+                            { y: 81, color: "#424242" }
                         ]
                     }
                 ]
@@ -333,14 +303,8 @@
                     fontColor: "#5cb85c",
                     fontSize: 30,
                     horizontalAlign: "center",
-                    text: "878451",
+                    text: "27,9",
                     verticalAlign: "center"
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
                 },
                 data: [
                     {
@@ -350,8 +314,8 @@
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 12, color: "#c70000", toolTipContent: "Netherlands: $<span>" + CanvasJS.formatNumber(Math.round(12 / 100 * totalRevenue), '#,###,###') + "</span>" },
-                            { y: 88, color: "#424242", toolTipContent: null }
+                            { y: 12, color: "#c70000" },
+                            { y: 88, color: "#424242" }
                         ]
                     }
                 ]
@@ -363,8 +327,8 @@
                 axisX: {
                     gridThickness: 0,
                     lineThickness: 0,
-                    maximum: new Date("1 Dec 2015"),
-                    minimum: new Date("1 Jan 2015"),
+                    maximum: new Date("1 Dec 2017"),
+                    minimum: new Date("1 Jan 2017"),
                     tickLength: 0,
                     valueFormatString: " "
                 },
@@ -374,35 +338,29 @@
                     tickLength: 0,
                     valueFormatString: " "
                 },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
-                },
                 data: [
-                    {
-                        color: "#424242",
-                        fillOpacity: 1,
-                        lineColor: "#ffffff",
-                        lineThickness: 3,
-                        markerSize: 0,
-                        type: "splineArea",
-                        dataPoints: [
-                            { x: new Date("1 Jan 2015"), y: 2171991 },
-                            { x: new Date("1 Feb 2015"), y: 2678910 },
-                            { x: new Date("1 Mar 2015"), y: 3215487 },
-                            { x: new Date("1 Apr 2015"), y: 2213754 },
-                            { x: new Date("1 May 2015"), y: 2584561 },
-                            { x: new Date("1 Jun 2015"), y: 3178647 },
-                            { x: new Date("1 Jul 2015"), y: 3645041 },
-                            { x: new Date("1 Aug 2015"), y: 2914568 },
-                            { x: new Date("1 Sep 2015"), y: 3985421 },
-                            { x: new Date("1 Oct 2015"), y: 3754219 },
-                            { x: new Date("1 Nov 2015"), y: 3971047 },
-                            { x: new Date("1 Dec 2015"), y: 4121538 }
-                        ]
-                    }
+                   {
+                       color: "#424242",
+                       fillOpacity: 1,
+                       lineColor: "#5cb85c",
+                       lineThickness: 3,
+                       markerSize: 0,
+                       type: "splineArea",
+                       dataPoints: [
+                           { x: new Date("1 Jan 2017"), y: 2171991 },
+                           { x: new Date("1 Feb 2017"), y: 2678910 },
+                           { x: new Date("1 Mar 2017"), y: 3215487 },
+                           { x: new Date("1 Apr 2017"), y: 2213754 },
+                           { x: new Date("1 May 2017"), y: 2584561 },
+                           { x: new Date("1 Jun 2017"), y: 3178647 },
+                           { x: new Date("1 Jul 2017"), y: 3645041 },
+                           { x: new Date("1 Aug 2017"), y: 2914568 },
+                           { x: new Date("1 Sep 2017"), y: 3985421 },
+                           { x: new Date("1 Oct 2017"), y: 3754219 },
+                           { x: new Date("1 Nov 2017"), y: 3971047 },
+                           { x: new Date("1 Dec 2017"), y: 4121538 }
+                       ]
+                   }
                 ]
             });
 
@@ -412,8 +370,8 @@
                 axisX: {
                     gridThickness: 0,
                     lineThickness: 0,
-                    maximum: new Date("1 Dec 2015"),
-                    minimum: new Date("1 Jan 2015"),
+                    maximum: new Date("1 Dec 2017"),
+                    minimum: new Date("1 Jan 2017"),
                     tickLength: 0,
                     valueFormatString: " "
                 },
@@ -422,110 +380,6 @@
                     lineThickness: 0,
                     tickLength: 0,
                     valueFormatString: " "
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
-                },
-                data: [
-                    {
-                        color: "#424242",
-                        fillOpacity: 1,
-                        lineColor: "#ffffff",
-                        lineThickness: 3,
-                        markerSize: 0,
-                        type: "splineArea",
-                        dataPoints: [
-                            { x: new Date("1 Jan 2015"), y: 17376 },
-                            { x: new Date("1 Feb 2015"), y: 21431 },
-                            { x: new Date("1 Mar 2015"), y: 25724 },
-                            { x: new Date("1 Apr 2015"), y: 22138 },
-                            { x: new Date("1 May 2015"), y: 20676 },
-                            { x: new Date("1 Jun 2015"), y: 25429 },
-                            { x: new Date("1 Jul 2015"), y: 29160 },
-                            { x: new Date("1 Aug 2015"), y: 23317 },
-                            { x: new Date("1 Sep 2015"), y: 31883 },
-                            { x: new Date("1 Oct 2015"), y: 30034 },
-                            { x: new Date("1 Nov 2015"), y: 31768 },
-                            { x: new Date("1 Dec 2015"), y: 41215 }
-                        ]
-                    }
-                ]
-            });
-
-            var pageViewsSplineAreaChart2 = new CanvasJS.Chart("chart13", {
-                animationEnabled: true,
-                backgroundColor: "transparent",
-                axisX: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    maximum: new Date("1 Dec 2015"),
-                    minimum: new Date("1 Jan 2015"),
-                    tickLength: 0,
-                    valueFormatString: " "
-                },
-                axisY: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    tickLength: 0,
-                    valueFormatString: " "
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
-                },
-                data: [
-                    {
-                        color: "#424242",
-                        fillOpacity: 1,
-                        lineColor: "#5cb85c",
-                        lineThickness: 3,
-                        markerSize: 0,
-                        type: "splineArea",
-                        dataPoints: [
-                            { x: new Date("1 Jan 2015"), y: 2171991 },
-                            { x: new Date("1 Feb 2015"), y: 2678910 },
-                            { x: new Date("1 Mar 2015"), y: 3215487 },
-                            { x: new Date("1 Apr 2015"), y: 2213754 },
-                            { x: new Date("1 May 2015"), y: 2584561 },
-                            { x: new Date("1 Jun 2015"), y: 3178647 },
-                            { x: new Date("1 Jul 2015"), y: 3645041 },
-                            { x: new Date("1 Aug 2015"), y: 2914568 },
-                            { x: new Date("1 Sep 2015"), y: 3985421 },
-                            { x: new Date("1 Oct 2015"), y: 3754219 },
-                            { x: new Date("1 Nov 2015"), y: 3971047 },
-                            { x: new Date("1 Dec 2015"), y: 4121538 }
-                        ]
-                    }
-                ]
-            });
-
-            var ordersSplineAreaChart2 = new CanvasJS.Chart("chart14", {
-                animationEnabled: true,
-                backgroundColor: "transparent",
-                axisX: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    maximum: new Date("1 Dec 2015"),
-                    minimum: new Date("1 Jan 2015"),
-                    tickLength: 0,
-                    valueFormatString: " "
-                },
-                axisY: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    tickLength: 0,
-                    valueFormatString: " "
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242"
                 },
                 data: [
                     {
@@ -536,20 +390,106 @@
                         markerSize: 0,
                         type: "splineArea",
                         dataPoints: [
-                            { x: new Date("1 Jan 2015"), y: 17376 },
-                            { x: new Date("1 Feb 2015"), y: 21431 },
-                            { x: new Date("1 Mar 2015"), y: 25724 },
-                            { x: new Date("1 Apr 2015"), y: 22138 },
-                            { x: new Date("1 May 2015"), y: 20676 },
-                            { x: new Date("1 Jun 2015"), y: 25429 },
-                            { x: new Date("1 Jul 2015"), y: 29160 },
-                            { x: new Date("1 Aug 2015"), y: 23317 },
-                            { x: new Date("1 Sep 2015"), y: 31883 },
-                            { x: new Date("1 Oct 2015"), y: 30034 },
-                            { x: new Date("1 Nov 2015"), y: 31768 },
-                            { x: new Date("1 Dec 2015"), y: 41215 }
+                            { x: new Date("1 Jan 2017"), y: 17376 },
+                            { x: new Date("1 Feb 2017"), y: 21431 },
+                            { x: new Date("1 Mar 2017"), y: 25724 },
+                            { x: new Date("1 Apr 2017"), y: 22138 },
+                            { x: new Date("1 May 2017"), y: 20676 },
+                            { x: new Date("1 Jun 2017"), y: 25429 },
+                            { x: new Date("1 Jul 2017"), y: 29160 },
+                            { x: new Date("1 Aug 2017"), y: 23317 },
+                            { x: new Date("1 Sep 2017"), y: 31883 },
+                            { x: new Date("1 Oct 2017"), y: 30034 },
+                            { x: new Date("1 Nov 2017"), y: 31768 },
+                            { x: new Date("1 Dec 2017"), y: 41215 }
+                        ]
+                    }]
+            });
+
+            var pageViewsSplineAreaChart2 = new CanvasJS.Chart("chart13", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                axisX: {
+                    gridThickness: 0,
+                    lineThickness: 0,
+                    maximum: new Date("1 Dec 2017"),
+                    minimum: new Date("1 Jan 2017"),
+                    tickLength: 0,
+                    valueFormatString: " "
+                },
+                axisY: {
+                    gridThickness: 0,
+                    lineThickness: 0,
+                    tickLength: 0,
+                    valueFormatString: " "
+                },
+                data: [
+                {
+                    color: "#424242",
+                    fillOpacity: 1,
+                    lineColor: "#c70000",
+                    lineThickness: 3,
+                    markerSize: 0,
+                    type: "splineArea",
+                    dataPoints: [
+                        { x: new Date("1 Jan 2017"), y: 17376 },
+                        { x: new Date("1 Feb 2017"), y: 21431 },
+                        { x: new Date("1 Mar 2017"), y: 25724 },
+                        { x: new Date("1 Apr 2017"), y: 22138 },
+                        { x: new Date("1 May 2017"), y: 20676 },
+                        { x: new Date("1 Jun 2017"), y: 25429 },
+                        { x: new Date("1 Jul 2017"), y: 29160 },
+                        { x: new Date("1 Aug 2017"), y: 23317 },
+                        { x: new Date("1 Sep 2017"), y: 31883 },
+                        { x: new Date("1 Oct 2017"), y: 30034 },
+                        { x: new Date("1 Nov 2017"), y: 31768 },
+                        { x: new Date("1 Dec 2017"), y: 41215 }
+                    ]
+                }
+                ]
+            });
+
+            var ordersSplineAreaChart2 = new CanvasJS.Chart("chart14", {
+                animationEnabled: true,
+                backgroundColor: "transparent",
+                axisX: {
+                    gridThickness: 0,
+                    lineThickness: 0,
+                    maximum: new Date("1 Dec 2017"),
+                    minimum: new Date("1 Jan 2017"),
+                    tickLength: 0,
+                    valueFormatString: " "
+                },
+                axisY: {
+                    gridThickness: 0,
+                    lineThickness: 0,
+                    tickLength: 0,
+                    valueFormatString: " "
+                },
+                data: [
+                    {
+                        color: "#424242",
+                        fillOpacity: 1,
+                        lineColor: "#5cb85c",
+                        lineThickness: 3,
+                        markerSize: 0,
+                        type: "splineArea",
+                        dataPoints: [
+                            { x: new Date("1 Jan 2017"), y: 2171991 },
+                            { x: new Date("1 Feb 2017"), y: 2678910 },
+                            { x: new Date("1 Mar 2017"), y: 3215487 },
+                            { x: new Date("1 Apr 2017"), y: 2213754 },
+                            { x: new Date("1 May 2017"), y: 2584561 },
+                            { x: new Date("1 Jun 2017"), y: 3178647 },
+                            { x: new Date("1 Jul 2017"), y: 3645041 },
+                            { x: new Date("1 Aug 2017"), y: 2914568 },
+                            { x: new Date("1 Sep 2017"), y: 3985421 },
+                            { x: new Date("1 Oct 2017"), y: 3754219 },
+                            { x: new Date("1 Nov 2017"), y: 3971047 },
+                            { x: new Date("1 Dec 2017"), y: 4121538 }
                         ]
                     }
+
                 ]
             });
 
@@ -573,13 +513,6 @@
                     horizontalAlign: "right",
                     verticalAlign: "top"
                 },
-                toolTip: {
-                    backgroundColor: "#000000",
-                    borderThickness: 2,
-                    cornerRadius: 0,
-                    fontColor: "#ffffff",
-                    shared: true
-                },
                 data: [
                     {
                         color: "#bbbbbb",
@@ -589,13 +522,13 @@
                         showInLegend: true,
                         type: "spline",
                         dataPoints: [
-                            { x: new Date("2011"), y: 325799 },
-                            { x: new Date("2012"), y: 401837 },
-                            { x: new Date("2013"), y: 482323 },
-                            { x: new Date("2014"), y: 332063 },
-                            { x: new Date("2015"), y: 387684 },
-                            { x: new Date("2016"), y: 476797 },
-                            { x: new Date("2017"), y: 546756 }
+                            { x: new Date("2011"), y: 0 },
+                            { x: new Date("2012"), y: 0 },
+                            { x: new Date("2013"), y: 0 },
+                            { x: new Date("2014"), y: 0 },
+                            { x: new Date("2015"), y: 0 },
+                            { x: new Date("2016"), y: 0 },
+                            { x: new Date("2017"), y: 300.1 }
                         ]
                     },
                     {
@@ -606,13 +539,13 @@
                         showInLegend: true,
                         type: "spline",
                         dataPoints: [
-                             { x: new Date("2011"), y: 108599 },
-                             { x: new Date("2012"), y: 133945 },
-                             { x: new Date("2013"), y: 160774 },
-                             { x: new Date("2014"), y: 110688 },
-                             { x: new Date("2015"), y: 129228 },
-                             { x: new Date("2016"), y: 158932 },
-                             { x: new Date("2017"), y: 182252 },
+                             { x: new Date("2011"), y: 0 },
+                             { x: new Date("2012"), y: 0 },
+                             { x: new Date("2013"), y: 0 },
+                             { x: new Date("2014"), y: 0 },
+                             { x: new Date("2015"), y: 0 },
+                             { x: new Date("2016"), y: 0 },
+                             { x: new Date("2017"), y: 355.6 },
                         ]
                     },
                      {
@@ -623,13 +556,13 @@
                          showInLegend: true,
                          type: "spline",
                          dataPoints: [
-                             { x: new Date("2011"), y: 808799 },
-                             { x: new Date("2012"), y: 133945 },
-                             { x: new Date("2013"), y: 968774 },
-                             { x: new Date("2014"), y: 114688 },
-                             { x: new Date("2015"), y: 29928 },
-                             { x: new Date("2016"), y: 158932 },
-                             { x: new Date("2017"), y: 782292 },
+                             { x: new Date("2011"), y: 0 },
+                             { x: new Date("2012"), y: 0 },
+                             { x: new Date("2013"), y: 0 },
+                             { x: new Date("2014"), y: 0 },
+                             { x: new Date("2015"), y: 0 },
+                             { x: new Date("2016"), y: 0 },
+                             { x: new Date("2017"), y: 48.4 },
                          ]
                      }
                 ]
@@ -649,16 +582,6 @@
                     lineThickness: 0,
                     tickThickness: 0,
                     valueFormatString: " "
-
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242",
-                    contentFormatter: function (e) {
-                        return e.entries[0].dataPoint.label + ": " + CanvasJS.formatNumber(Math.round(e.entries[0].dataPoint.y / 100 * totalUsers), '###,###');
-                    }
                 },
                 data: [
                     {
@@ -669,9 +592,9 @@
                         indexLabelPlacement: "outside",
                         type: "bar",
                         dataPoints: [
-                            { y: 20148534906, indexLabel: "сахар", label: "КЗ" },
-                            { y: 465429008985, indexLabel: "говядина", label: "ГЗ" },
-                            { y: 382473467150, indexLabel: "мука", label: "Каталог" }
+                            { y: 12, indexLabel: "Кондиционер", label: "ГЗ" },
+                            { y: 11, indexLabel: "Автопогрузчик с кабиной", label: "КЗ" },
+                            { y: 30, indexLabel: "Краска", label: "Каталог" }
                         ]
                     }
                 ]
@@ -691,16 +614,6 @@
                     lineThickness: 0,
                     tickThickness: 0,
                     valueFormatString: " "
-
-                },
-                toolTip: {
-                    backgroundColor: "#ffffff",
-                    borderThickness: 0,
-                    cornerRadius: 0,
-                    fontColor: "#424242",
-                    contentFormatter: function (e) {
-                        return e.entries[0].dataPoint.label + ": " + CanvasJS.formatNumber(Math.round(e.entries[0].dataPoint.y / 100 * totalUsers), '###,###');
-                    }
                 },
                 data: [
                     {
@@ -711,9 +624,9 @@
                         indexLabelPlacement: "outside",
                         type: "bar",
                         dataPoints: [
-                            { y: 5645, indexLabel: "5645", label: "День" },
-                            { y: 56454, indexLabel: "56454", label: "Недель" },
-                            { y: 545899, indexLabel: "545899", label: "Месяц" }
+                            { y: 105, indexLabel: "105", label: "День" },
+                            { y: 500, indexLabel: "500", label: "Недель" },
+                            { y: 2000, indexLabel: "2000", label: "Месяц" }
                         ]
                     }
                 ]
@@ -739,13 +652,6 @@
                     horizontalAlign: "right",
                     verticalAlign: "top"
                 },
-                toolTip: {
-                    backgroundColor: "#000000",
-                    borderThickness: 2,
-                    cornerRadius: 0,
-                    fontColor: "#ffffff",
-                    shared: true
-                },
                 data: [
                     {
                         color: "#bbbbbb",
@@ -755,13 +661,13 @@
                         showInLegend: true,
                         type: "spline",
                         dataPoints: [
-                            { x: new Date("2011"), y: 3799 },
-                            { x: new Date("2012"), y: 4017 },
-                            { x: new Date("2013"), y: 4323 },
-                            { x: new Date("2014"), y: 3323 },
-                            { x: new Date("2015"), y: 3884 },
-                            { x: new Date("2016"), y: 4767 },
-                            { x: new Date("2017"), y: 5456 }
+                              { x: new Date("2011"), y: 0 },
+                             { x: new Date("2012"), y: 0 },
+                             { x: new Date("2013"), y: 0 },
+                             { x: new Date("2014"), y: 0 },
+                             { x: new Date("2015"), y: 0 },
+                             { x: new Date("2016"), y: 0 },
+                            { x: new Date("2017"), y: 11 }
                         ]
                     },
                     {
@@ -772,13 +678,13 @@
                         showInLegend: true,
                         type: "spline",
                         dataPoints: [
-                             { x: new Date("2011"), y: 1089 },
-                             { x: new Date("2012"), y: 1945 },
-                             { x: new Date("2013"), y: 1604 },
-                             { x: new Date("2014"), y: 1188 },
-                             { x: new Date("2015"), y: 1228 },
-                             { x: new Date("2016"), y: 1532 },
-                             { x: new Date("2017"), y: 1852 },
+                              { x: new Date("2011"), y: 0 },
+                             { x: new Date("2012"), y: 0 },
+                             { x: new Date("2013"), y: 0 },
+                             { x: new Date("2014"), y: 0 },
+                             { x: new Date("2015"), y: 0 },
+                             { x: new Date("2016"), y: 0 },
+                             { x: new Date("2017"), y: 9 },
                         ]
                     },
                      {
@@ -789,13 +695,13 @@
                          showInLegend: true,
                          type: "spline",
                          dataPoints: [
-                             { x: new Date("2011"), y: 8099 },
-                             { x: new Date("2012"), y: 1335 },
-                             { x: new Date("2013"), y: 9684 },
-                             { x: new Date("2014"), y: 1688 },
-                             { x: new Date("2015"), y: 2988 },
-                             { x: new Date("2016"), y: 1532 },
-                             { x: new Date("2017"), y: 7822 },
+                               { x: new Date("2011"), y: 0 },
+                             { x: new Date("2012"), y: 0 },
+                             { x: new Date("2013"), y: 0 },
+                             { x: new Date("2014"), y: 0 },
+                             { x: new Date("2015"), y: 0 },
+                             { x: new Date("2016"), y: 0 },
+                             { x: new Date("2017"), y: 7 },
                          ]
                      }
                 ]
@@ -805,15 +711,6 @@
             var usersDoughnutChart = new CanvasJS.Chart("chart12", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
-                toolTip: {
-                    backgroundColor: "#000000",
-                    borderThickness: 2,
-                    cornerRadius: 0,
-                    fontColor: "#ffffff",
-                    contentFormatter: function (e) {
-                        return e.entries[0].dataPoint.name + ": " + CanvasJS.formatNumber(e.entries[0].dataPoint.y, '###,###') + " - " + Math.round(e.entries[0].dataPoint.y / totalUsers * 100) + "%"; // calcuting and showing percentage of users inside tooltip
-                    }
-                },
                 data: [
                     {
                         innerRadius: "82%",
@@ -822,9 +719,9 @@
                         startAngle: 180,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 1921757, name: "КЗ", color: "#c70000", exploded: true },
-                            { y: 1928977, name: "ГЗ", color: "#5cb85c", exploded: true },
-                            { y: 5765279, name: "Каталог", color: "white", exploded: true }
+                            { y: 46, name: "ГЗ", color: "#5cb85c", exploded: true },
+                            { y: 39, name: "КЗ", color: "#c70000", exploded: true },
+                            { y: 15, name: "Каталог", color: "white", exploded: true }
                         ]
                     }
                 ]

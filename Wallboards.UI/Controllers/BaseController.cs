@@ -1,63 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Wallboards.UI.Controllers
 {
     [SessionAuthorize]
     public abstract class BaseController : Controller
     {
-        private GzDbContext _gzDbContext;
-        private KzDbContext _kzDbContext;
-        private ECatalogDbContext _catalog;
-
         protected BaseController()
         {
-            _gzDbContext = new GzDbContext();
-            _kzDbContext = new KzDbContext();
-            _catalog = new ECatalogDbContext();
+            Gz = new GzDbContext();
+            Kz = new KzDbContext();
+            Catalog = new ECatalogDbContext();
         }
 
-        protected GzDbContext Gz
-        {
-            get
-            {
-                return _gzDbContext;
-            }
-        }
+        protected GzDbContext Gz { get; private set; }
 
-        protected KzDbContext Kz
-        {
-            get
-            {
-                return _kzDbContext;
-            }
-        }
+        protected KzDbContext Kz { get; private set; }
 
-        protected ECatalogDbContext Catalog
-        {
-            get
-            {
-                return _catalog;
-            }
-        }
+        protected ECatalogDbContext Catalog { get; }
 
         protected override void Dispose(bool disposing)
         {
+            
             if (disposing)
             {
-                if (_gzDbContext != null)
+                if (Gz != null)
                 {
-                    _gzDbContext.Dispose();
-                    _gzDbContext = null;
+                    Gz.Dispose();
+                    Gz = null;
                 }
 
-                if (_kzDbContext != null)
+                if (Kz != null)
                 {
-                    _kzDbContext.Dispose();
-                    _kzDbContext = null;
+                    Kz.Dispose();
+                    Kz = null;
                 }
             }
              

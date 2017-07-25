@@ -1,10 +1,4 @@
-﻿using Oracle.ManagedDataAccess.Types;
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
+﻿using System;
 using System.Web.Mvc;
 using Wallboards.UI.Helpers;
 
@@ -26,6 +20,13 @@ namespace Wallboards.UI.Controllers
             }
 
             return HttpNotFound();
+        }
+
+        public ActionResult Error()
+        {
+            var model=new HandleErrorInfo(Server.GetLastError(), "Home","Error");
+            
+            return View("Error", model);
         }
     }
 }

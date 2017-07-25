@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace Wallboards.UI
 {
@@ -30,9 +26,10 @@ namespace Wallboards.UI
 
     public class CallCentreDbContext : MainDbContext
     {
-
+        private const string CONN_NAME = "CallCentre";
+        
         public CallCentreDbContext()
-            : base("CallCentre")
+            : base(CONN_NAME)
         {
         }
 
@@ -40,34 +37,46 @@ namespace Wallboards.UI
 
     public class ECatalogDbContext : MainDbContext
     {
+        private const string CONN_NAME = "ECatalog";
+
         public ECatalogDbContext()
-            : base("ECatalog")
+            : base(CONN_NAME)
         {
         }
+        
     }
 
     public class VyatDbContext : MainDbContext
     {
+        private const string CONN_NAME = "Vyat";
+ 
         public VyatDbContext()
-            : base("Vyat")
+            : base(CONN_NAME)
         {
         }
+        
     }
 
     public class GzDbContext : MainDbContext
     {
+        private const string CONN_NAME = "GZ";
+
         public GzDbContext()
-            : base("GZ")
+            : base(CONN_NAME)
         {
         }
+        
     }
 
     public class KzDbContext : MainDbContext
     {
+        private const string CONN_NAME = "KZ";
+        
         public KzDbContext()
-            : base("KZ")
+            : base(CONN_NAME)
         {
         }
+        
     }
 
 }

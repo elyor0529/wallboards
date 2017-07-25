@@ -1,9 +1,5 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using Wallboards.UI.Helpers;
 using Wallboards.UI.Models;
@@ -18,9 +14,7 @@ namespace Wallboards.UI.Controllers
         {
             return View();
         }
-
-        //
-        // POST: /Account/Login
+ 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]

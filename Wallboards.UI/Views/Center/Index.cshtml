@@ -3,6 +3,9 @@
 }
 @section css{
     <style>
+        .canvasjs-chart-credit {
+            display: none;
+        }
     </style>
 }
 
@@ -61,6 +64,7 @@
 
             </div>
         </div>
+
     </div>
 
     <hr>
@@ -114,16 +118,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card card-block">
-                        <h5 class="card-title">Специалисти</h5>
-                        <h2>6</h2>
-                        <div class="area-chart inview" id="chart13"></div>
+                        <h5 class="card-title text-center">Специалисти</h5>
+                        <br/>
+                        <div class="area-chart inview">
+                            <h2 style="background-color: #5cb85c; font-size: 3rem;   position: absolute; height: 80px; bottom: 0; width: 80%; padding-left: 40%; padding-top: 5%;">6</h2>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card card-block">
-                        <h5 class="card-title">Модераторы</h5>
-                        <h2>10</h2>
-                        <div class="area-chart inview" id="chart14"></div>
+                        <h5 class="card-title text-center">Модераторы</h5>
+                        <br/>
+                        <div class="area-chart inview" >
+                            <h2 style="background-color: #848484; font-size: 3rem; position: absolute; height: 120px; bottom: 0;width: 80%;padding-left: 35%; padding-top: 12%;">10</h2>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,7 +149,7 @@
                     <div class="bar-chart inview" id="chart12"></div>
                 </div>
                 <div class="col-md-7">
-                    <ul style="list-style:none;">
+                    <ul style="list-style:none;margin-top: 15%;">
                         <li>
                             <h3 style="color:#5cb85c">ГЗ - 46%</h3>
                         </li>
@@ -157,7 +165,9 @@
 
         </div>
 
-    </div>
+    </div> 
+    
+    <hr>
 
 </div>
 
@@ -171,12 +181,12 @@
 
         $(function () {
 
-            var salesDoughnutChartUS = new CanvasJS.Chart("chart4", {
+            var chart4 = new CanvasJS.Chart("chart4", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
                     fontColor: "#848484",
-                    fontSize: 30,
+                    fontSize: 24,
                     horizontalAlign: "center",
                     text: "2300",
                     verticalAlign: "center"
@@ -184,24 +194,24 @@
                 data: [
                     {
                         explodeOnClick: false,
-                        innerRadius: "96%",
+                        innerRadius: "80%",
                         radius: "90%",
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 47, color: "#c70000" },
-                            { y: 53, color: "#424242" }
+                            { y: 83, color: "#5cb85c" },
+                            { y: 17, color: "#424242" }
                         ]
                     }
                 ]
             });
 
-            var salesDoughnutChartNL = new CanvasJS.Chart("chart5", {
+            var chart5 = new CanvasJS.Chart("chart5", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
                     fontColor: "#848484",
-                    fontSize: 30,
+                    fontSize: 24,
                     horizontalAlign: "center",
                     text: "110",
                     verticalAlign: "center"
@@ -209,24 +219,24 @@
                 data: [
                     {
                         explodeOnClick: false,
-                        innerRadius: "96%",
+                        innerRadius: "80%",
                         radius: "90%",
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 19, color: "#c70000" },
-                            { y: 81, color: "#424242" }
+                            { y: 4, color: "#c70000" },
+                            { y: 96, color: "#424242" }
                         ]
                     }
                 ]
             });
 
-            var salesDoughnutChartDE = new CanvasJS.Chart("chart6", {
+            var chart6 = new CanvasJS.Chart("chart6", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
                     fontColor: "#848484",
-                    fontSize: 30,
+                    fontSize: 24,
                     horizontalAlign: "center",
                     text: "340",
                     verticalAlign: "center"
@@ -234,24 +244,24 @@
                 data: [
                     {
                         explodeOnClick: false,
-                        innerRadius: "96%",
-                        radius: "90%",
+                        innerRadius: "80%",
+                        radius: "80%",
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 12, color: "#c70000" },
+                            { y: 12, color: "white" },
                             { y: 88, color: "#424242" }
                         ]
                     }
                 ]
             });
 
-            var salesDoughnutChartUS2 = new CanvasJS.Chart("chart8", {
+            var chart8 = new CanvasJS.Chart("chart8", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
-                    fontColor: "#5cb85c",
-                    fontSize: 30,
+                    fontColor: "#424242",
+                    fontSize: 24,
                     horizontalAlign: "center",
                     text: "105,2",
                     verticalAlign: "center"
@@ -259,24 +269,24 @@
                 data: [
                     {
                         explodeOnClick: false,
-                        innerRadius: "96%",
+                        innerRadius: "80%",
                         radius: "90%",
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 47, color: "#c70000" },
-                            { y: 53, color: "#424242" }
+                            { y: 49, color: "#5cb85c" },
+                            { y: 51, color: "#424242" }
                         ]
                     }
                 ]
             });
 
-            var salesDoughnutChartNL2 = new CanvasJS.Chart("chart9", {
+            var chart9 = new CanvasJS.Chart("chart9", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
-                    fontColor: "#5cb85c",
-                    fontSize: 30,
+                    fontColor: "#424242",
+                    fontSize: 24,
                     horizontalAlign: "center",
                     text: "78,8",
                     verticalAlign: "center"
@@ -284,24 +294,24 @@
                 data: [
                     {
                         explodeOnClick: false,
-                        innerRadius: "96%",
+                        innerRadius: "80%",
                         radius: "90%",
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 19, color: "#c70000" },
-                            { y: 81, color: "#424242" }
+                            { y: 37, color: "#c70000" },
+                            { y: 63, color: "#424242" }
                         ]
                     }
                 ]
             });
 
-            var salesDoughnutChartDE2 = new CanvasJS.Chart("chart10", {
+            var chart10 = new CanvasJS.Chart("chart10", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 title: {
-                    fontColor: "#5cb85c",
-                    fontSize: 30,
+                    fontColor: "#424242",
+                    fontSize: 24,
                     horizontalAlign: "center",
                     text: "27,9",
                     verticalAlign: "center"
@@ -309,19 +319,19 @@
                 data: [
                     {
                         explodeOnClick: false,
-                        innerRadius: "96%",
+                        innerRadius: "80%",
                         radius: "90%",
                         startAngle: 270,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 12, color: "#c70000" },
-                            { y: 88, color: "#424242" }
+                            { y: 13, color: "white" },
+                            { y: 87, color: "#424242" }
                         ]
                     }
                 ]
             });
 
-            var pageViewsSplineAreaChart = new CanvasJS.Chart("chart2", {
+            var chart2 = new CanvasJS.Chart("chart2", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -364,7 +374,7 @@
                 ]
             });
 
-            var ordersSplineAreaChart = new CanvasJS.Chart("chart3", {
+            var chart3 = new CanvasJS.Chart("chart3", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -405,95 +415,8 @@
                         ]
                     }]
             });
-
-            var pageViewsSplineAreaChart2 = new CanvasJS.Chart("chart13", {
-                animationEnabled: true,
-                backgroundColor: "transparent",
-                axisX: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    maximum: new Date("1 Dec 2017"),
-                    minimum: new Date("1 Jan 2017"),
-                    tickLength: 0,
-                    valueFormatString: " "
-                },
-                axisY: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    tickLength: 0,
-                    valueFormatString: " "
-                },
-                data: [
-                {
-                    color: "#424242",
-                    fillOpacity: 1,
-                    lineColor: "#c70000",
-                    lineThickness: 3,
-                    markerSize: 0,
-                    type: "splineArea",
-                    dataPoints: [
-                        { x: new Date("1 Jan 2017"), y: 17376 },
-                        { x: new Date("1 Feb 2017"), y: 21431 },
-                        { x: new Date("1 Mar 2017"), y: 25724 },
-                        { x: new Date("1 Apr 2017"), y: 22138 },
-                        { x: new Date("1 May 2017"), y: 20676 },
-                        { x: new Date("1 Jun 2017"), y: 25429 },
-                        { x: new Date("1 Jul 2017"), y: 29160 },
-                        { x: new Date("1 Aug 2017"), y: 23317 },
-                        { x: new Date("1 Sep 2017"), y: 31883 },
-                        { x: new Date("1 Oct 2017"), y: 30034 },
-                        { x: new Date("1 Nov 2017"), y: 31768 },
-                        { x: new Date("1 Dec 2017"), y: 41215 }
-                    ]
-                }
-                ]
-            });
-
-            var ordersSplineAreaChart2 = new CanvasJS.Chart("chart14", {
-                animationEnabled: true,
-                backgroundColor: "transparent",
-                axisX: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    maximum: new Date("1 Dec 2017"),
-                    minimum: new Date("1 Jan 2017"),
-                    tickLength: 0,
-                    valueFormatString: " "
-                },
-                axisY: {
-                    gridThickness: 0,
-                    lineThickness: 0,
-                    tickLength: 0,
-                    valueFormatString: " "
-                },
-                data: [
-                    {
-                        color: "#424242",
-                        fillOpacity: 1,
-                        lineColor: "#5cb85c",
-                        lineThickness: 3,
-                        markerSize: 0,
-                        type: "splineArea",
-                        dataPoints: [
-                            { x: new Date("1 Jan 2017"), y: 2171991 },
-                            { x: new Date("1 Feb 2017"), y: 2678910 },
-                            { x: new Date("1 Mar 2017"), y: 3215487 },
-                            { x: new Date("1 Apr 2017"), y: 2213754 },
-                            { x: new Date("1 May 2017"), y: 2584561 },
-                            { x: new Date("1 Jun 2017"), y: 3178647 },
-                            { x: new Date("1 Jul 2017"), y: 3645041 },
-                            { x: new Date("1 Aug 2017"), y: 2914568 },
-                            { x: new Date("1 Sep 2017"), y: 3985421 },
-                            { x: new Date("1 Oct 2017"), y: 3754219 },
-                            { x: new Date("1 Nov 2017"), y: 3971047 },
-                            { x: new Date("1 Dec 2017"), y: 4121538 }
-                        ]
-                    }
-
-                ]
-            });
-
-            var usersSplineChart = new CanvasJS.Chart("chart1", {
+ 
+            var chart1 = new CanvasJS.Chart("chart1", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -568,7 +491,7 @@
                 ]
             });
 
-            var usersCountriesBarChart = new CanvasJS.Chart("chart7", {
+            var chart7 = new CanvasJS.Chart("chart7", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -588,7 +511,7 @@
                         color: "#424242",
                         indexLabelFontColor: "#5cb85c",
                         indexLabelFontFamily: "calibri",
-                        indexLabelFontSize: 18,
+                        indexLabelFontSize: 24,
                         indexLabelPlacement: "outside",
                         type: "bar",
                         dataPoints: [
@@ -600,7 +523,7 @@
                 ]
             });
 
-            var usersCountriesBarChart2 = new CanvasJS.Chart("chart15", {
+            var chart15 = new CanvasJS.Chart("chart15", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -618,9 +541,9 @@
                 data: [
                     {
                         color: "#424242",
-                        indexLabelFontColor: "#c70000",
+                        indexLabelFontColor: "#5cb85c",
                         indexLabelFontFamily: "calibri",
-                        indexLabelFontSize: 18,
+                        indexLabelFontSize: 24,
                         indexLabelPlacement: "outside",
                         type: "bar",
                         dataPoints: [
@@ -632,7 +555,7 @@
                 ]
             });
 
-            var usersSplineChart2 = new CanvasJS.Chart("chart11", {
+            var chart11 = new CanvasJS.Chart("chart11", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -707,21 +630,20 @@
                 ]
             });
 
-            // CanvasJS doughnut chart to show annual users - new and returning
-            var usersDoughnutChart = new CanvasJS.Chart("chart12", {
+            var chart12 = new CanvasJS.Chart("chart12", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 data: [
                     {
-                        innerRadius: "82%",
+                        innerRadius: "60%",
                         radius: "100%",
                         showInLegend: false,
                         startAngle: 180,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 46, name: "ГЗ", color: "#5cb85c", exploded: true },
-                            { y: 39, name: "КЗ", color: "#c70000", exploded: true },
-                            { y: 15, name: "Каталог", color: "white", exploded: true }
+                            { y: 46, name: "ГЗ", color: "#5cb85c" },
+                            { y: 39, name: "КЗ", color: "#c70000" },
+                            { y: 15, name: "Каталог", color: "white" }
                         ]
                     }
                 ]
@@ -732,35 +654,31 @@
             $('.inview').one('inview', function (e, isInView) {
                 if (isInView) {
                     switch (this.id) {
-                        case "chart4": salesDoughnutChartUS.render();
+                        case "chart4": chart4.render();
                             break;
-                        case "chart5": salesDoughnutChartNL.render();
+                        case "chart5": chart5.render();
                             break;
-                        case "chart6": salesDoughnutChartDE.render();
+                        case "chart6": chart6.render();
                             break;
-                        case "chart8": salesDoughnutChartUS2.render();
+                        case "chart8": chart8.render();
                             break;
-                        case "chart9": salesDoughnutChartNL2.render();
+                        case "chart9": chart9.render();
                             break;
-                        case "chart10": salesDoughnutChartDE2.render();
+                        case "chart10": chart10.render();
                             break;
-                        case "chart2": pageViewsSplineAreaChart.render();
+                        case "chart2": chart2.render();
                             break;
-                        case "chart3": ordersSplineAreaChart.render();
+                        case "chart3": chart3.render();
+                            break; 
+                        case "chart1": chart1.render();
                             break;
-                        case "chart13": pageViewsSplineAreaChart2.render();
+                        case "chart11": chart11.render();
                             break;
-                        case "chart14": ordersSplineAreaChart2.render();
+                        case "chart7": chart7.render();
                             break;
-                        case "chart1": usersSplineChart.render();
+                        case "chart15": chart15.render();
                             break;
-                        case "chart11": usersSplineChart2.render();
-                            break;
-                        case "chart7": usersCountriesBarChart.render();
-                            break;
-                        case "chart15": usersCountriesBarChart2.render();
-                            break;
-                        case "chart12": usersDoughnutChart.render();
+                        case "chart12": chart12.render();
                             break;
                     }
                 }

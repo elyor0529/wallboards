@@ -29,23 +29,11 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Центр</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="@Url.Action("Index","Center")#panel-1">Первый панель</a>
-                        <a class="dropdown-item" href="@Url.Action("Index","Center")#panel-2">Второй панель</a>
-                        <a class="dropdown-item" href="@Url.Action("Index","Center")#panel-3">Третий панель</a>
-                        <a class="dropdown-item" href="@Url.Action("Index","Center")#panel-4">Четвертый панель</a>
-                    </div>
+                <li class="nav-item">
+                     <a class="nav-link" href="@Url.Action("Index","Center")">Центр</a> 
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ИТ</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown02">
-                        <a class="dropdown-item" href="@Url.Action("Index","IT")#panel-1">Первый панель</a>
-                        <a class="dropdown-item" href="@Url.Action("Index","IT")#panel-2">Второй панель</a>
-                        <a class="dropdown-item" href="@Url.Action("Index","IT")#panel-3">Третий панель</a>
-                        <a class="dropdown-item" href="@Url.Action("Index","IT")#panel-4">Четвертый панель</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index","IT")">ИТ</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0" method="post" action="@Url.Action("LogOff","Account")">

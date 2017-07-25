@@ -9,9 +9,9 @@ body {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    padding-bottom: 3.5rem;
+    /*padding-bottom: 3.5rem;*/
     /*padding-top: 3.5rem;*/
-    padding-top: 20px;
+    /*padding-top: 2px;*/
 }
 
 /*
@@ -109,17 +109,17 @@ hr {
 }
 
 .doughnut-chart {
-    height: 200px !important;
+    height: 250px !important;
     width: 100%;
 }
 
 .area-chart {
-    height: 150px !important;
+    height: 200px !important;
     width: 100%;
 }
 
 .spline-chart {
-    height: 250px !important;
+    height: 300px !important;
     width: 100%;
 }
 

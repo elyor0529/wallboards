@@ -156,6 +156,7 @@
     <Content Include="Assets\css\dashboard.css" />
     <Content Include="Assets\fonts\font-roboto.css" />
     <Content Include="Assets\css\signin.css" />
+    <Content Include="Assets\img\people.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\canvasjs.min.js" />
     <Content Include="Assets\js\ie10-viewport-bug-workaround.js" />
@@ -198,6 +199,7 @@
   <ItemGroup>
     <Content Include="Views\IT\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

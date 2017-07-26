@@ -131,7 +131,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AnaliticaController.cs" />
+    <Compile Include="Controllers\AnalyticController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ITController.cs" />
     <Compile Include="Controllers\CenterController.cs" />
@@ -165,7 +165,7 @@
     <Content Include="Assets\js\tether.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Views\Analitica\Index.cshtml" />
+    <Content Include="Views\Analytic\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

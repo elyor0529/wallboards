@@ -2,7 +2,7 @@
 
 namespace Wallboards.UI.Controllers
 {
-    public class AnaliticaController : BaseController
+    public class AnalyticController : BaseController
     { 
         public ActionResult Index()
         {

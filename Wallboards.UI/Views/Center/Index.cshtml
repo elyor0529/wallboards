@@ -6,12 +6,11 @@
         .canvasjs-chart-credit {
             display: none;
         }
-        
+
         .col-md-4 {
-            padding: 20px;
+            padding-top: 10px;
             border: solid 1px #424242;
         }
-        
     </style>
 }
 
@@ -27,20 +26,17 @@
 
         <div class="col-md-4">
             <h3>Кол-во поставщиков тысяч</h3>
+            <br />
             <div class="row">
-                <div class="col-md-6">
-                    <div class="card card-block">
-                        <h5 class="card-title">ГЗ</h5>
-                        <h2>44 465</h2>
-                        <div class="area-chart inview" id="chart2"></div>
-                    </div>
+                <div class="col-md-6 text-center">
+                    <h2 class="text-center">44 465</h2>
+                    <div class="area-chart inview" id="chart2"></div>
+                    <h3 class="text-center">ГЗ</h3>
                 </div>
-                <div class="col-md-6">
-                    <div class="card card-block">
-                        <h5 class="card-title">КЗ</h5>
-                        <h2>19 498</h2>
-                        <div class="area-chart inview" id="chart3"></div>
-                    </div>
+                <div class="col-md-6 ">
+                    <h2 class="text-center">19 498</h2>
+                    <div class="area-chart inview" id="chart3"></div>
+                    <h3 class="text-center">КЗ</h3>
                 </div>
             </div>
         </div>
@@ -50,47 +46,41 @@
 
             <div class="row">
 
-                <div class="col-md-3">
+                <div class="col-md-4" style="border:none;">
                     <div class="doughnut-chart inview" id="chart5"></div>
-                    <br />
                     <h3 class="align-center">ГЗ</h3>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4" style="border:none;">
                     <div class="doughnut-chart inview" id="chart4"></div>
-                    <br />
                     <h3 class="align-center">КЗ</h3>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4" style="border:none;">
                     <div class="doughnut-chart inview" id="chart6"></div>
-                    <br />
                     <h3 class="align-center">Каталог</h3>
                 </div>
 
             </div>
         </div>
- 
+
 
         <div class="col-md-4">
             <h3>ТОП 3 товары </h3>
- 
+
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4" style="border:none;">
                     <div class="doughnut-chart inview" id="chart8"></div>
-                    <br />
                     <h4 class="align-center">Кондиционер</h4>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4" style="border:none;">
                     <div class="doughnut-chart inview" id="chart9"></div>
-                    <br />
                     <h4 class="align-center">Автопогрузчик</h4>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4" style="border:none;">
                     <div class="doughnut-chart inview" id="chart10"></div>
-                    <br />
                     <h4 class="align-center">Краска</h4>
                 </div>
             </div>
@@ -98,22 +88,20 @@
 
         <div class="col-md-4">
             <h3>Экономия (млрд.сум)</h3>
-            
             <div class="spline-chart inview" id="chart16"></div>
         </div>
 
         <div class="col-md-4">
             <h3>Среднее кол-во участников</h3>
-            <div class="bar-chart inview" id="chart11"></div> 
+            <div class="bar-chart inview" id="chart11"></div>
         </div>
- 
+
         <div class="col-md-4">
             <h3>Кол-во сотрудников</h3>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card card-block">
                         <h5 class="card-title text-center">Специалисти</h5>
-                        <br/>
                         <div class="area-chart inview">
                             <h2 style="background-color: #5cb85c; font-size: 3rem;   position: absolute; height: 80px; bottom: 0; width: 80%; padding-left: 40%; padding-top: 5%;">6</h2>
                         </div>
@@ -122,8 +110,7 @@
                 <div class="col-md-6">
                     <div class="card card-block">
                         <h5 class="card-title text-center">Модераторы</h5>
-                        <br/>
-                        <div class="area-chart inview" >
+                        <div class="area-chart inview">
                             <h2 style="background-color: #848484; font-size: 3rem; position: absolute; height: 120px; bottom: 0;width: 80%;padding-left: 35%; padding-top: 12%;">10</h2>
                         </div>
                     </div>
@@ -139,27 +126,12 @@
         <div class="col-md-4">
             <h3>Доля платформ</h3>
             <div class="row">
-                <div class="col-md-5">
-                    <div class="bar-chart inview" id="chart12"></div>
-                </div>
-                <div class="col-md-7">
-                    <ul style="list-style:none;margin-top: 15%;">
-                        <li>
-                            <h3 style="color:#5cb85c">ГЗ - 46%</h3>
-                        </li>
-                        <li>
-                            <h3 style="color:#c70000">КЗ - 39%</h3>
-                        </li>
-                        <li>
-                            <h3 style="color:white;">Каталог - 15%</h3>
-                        </li>
-                    </ul>
-                </div>
+                <div class="bar-chart inview" id="chart12"></div>
             </div>
 
         </div>
 
-    </div>  
+    </div>
 
 </div>
 
@@ -407,19 +379,21 @@
                         ]
                     }]
             });
- 
+
             var chart1 = new CanvasJS.Chart("chart1", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
+                axisY: {
+                    gridThickness: 0,
+                    lineThickness: 0,
+                    tickLength: 0,
+                    valueFormatString: " "
+                },
                 axisX: {
                     gridThickness: 0,
                     labelFontColor: "white",
-                    lineColor: "#424242"
-                },
-                axisY: {
-                    gridThickness: 0,
-                    labelFontColor: "white",
-                    lineColor: "#424242"
+                    lineColor: "#424242",
+                    labelFontSize: 16
                 },
                 legend: {
                     dockInsidePlotArea: true,
@@ -437,26 +411,28 @@
                         indexLabelFontSize: 24,
                         indexLabelOrientation: "horizontal",
                         dataPoints: [
-                            { label: "ГЗ", y:  355.6,color:"#5cb85c"},
-                            { label: "КЗ", y: 300.1 ,color:"#c70000"},
-                            { label: "Каталог", y: 48.4 ,color:"white"}
+                            { label: "ГЗ", y: 355.6, color: "#5cb85c" },
+                            { label: "КЗ", y: 300.1, color: "#c70000" },
+                            { label: "Каталог", y: 48.4, color: "white" }
                         ]
-                    } 
+                    }
                 ]
             });
-            
+
             var chart16 = new CanvasJS.Chart("chart16", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
                     gridThickness: 0,
                     labelFontColor: "white",
-                    lineColor: "#424242"
+                    lineColor: "#424242",
+                    labelFontSize: 16
                 },
                 axisY: {
                     gridThickness: 0,
-                    labelFontColor: "white",
-                    lineColor: "#424242",
+                    lineThickness: 0,
+                    tickLength: 0,
+                    valueFormatString: " "
                 },
                 legend: {
                     dockInsidePlotArea: true,
@@ -466,7 +442,7 @@
                     verticalAlign: "top"
                 },
                 data: [
-                    {  
+                    {
                         type: "column",
                         indexLabelPlacement: "outside",
                         indexLabel: "{y}",
@@ -474,11 +450,11 @@
                         indexLabelFontSize: 24,
                         indexLabelOrientation: "horizontal",
                         dataPoints: [
-                            { label: "ГЗ", y:  105.2,color:"#5cb85c"},
-                            { label: "КЗ", y: 78.8 ,color:"#c70000"},
-                            { label: "Каталог", y: 27.9 ,color:"white"}
+                            { label: "ГЗ", y: 105.2, color: "#5cb85c" },
+                            { label: "КЗ", y: 78.8, color: "#c70000" },
+                            { label: "Каталог", y: 27.9, color: "white" }
                         ]
-                    } 
+                    }
                 ]
             });
 
@@ -498,7 +474,7 @@
                             { y: 30, name: "Каталог", color: "#5cb85c" }
                         ]
                     }
-                ] 
+                ]
             });
 
             var chart15 = new CanvasJS.Chart("chart15", {
@@ -533,7 +509,7 @@
                 ]
             });
 
-            var chart11 = new CanvasJS.Chart("chart11", { 
+            var chart11 = new CanvasJS.Chart("chart11", {
                 animationEnabled: true,
                 backgroundColor: "transparent",
                 axisX: {
@@ -574,11 +550,13 @@
                         radius: "100%",
                         showInLegend: false,
                         startAngle: 180,
+                        indexLabelPlacement: "outside",
+                        indexLabelFontSize: 24,
                         type: "doughnut",
                         dataPoints: [
-                            { y: 46, name: "ГЗ", color: "#5cb85c" },
-                            { y: 39, name: "КЗ", color: "#c70000" },
-                            { y: 15, name: "Каталог", color: "white" }
+                            { y: 46, indexLabel: "ГЗ {y}%", color: "#5cb85c" },
+                            { y: 39, indexLabel: "КЗ {y}%", color: "#c70000" },
+                            { y: 15, indexLabel: "Каталог {y}%", color: "white" }
                         ]
                     }
                 ]
@@ -604,7 +582,7 @@
                         case "chart2": chart2.render();
                             break;
                         case "chart3": chart3.render();
-                            break; 
+                            break;
                         case "chart1": chart1.render();
                             break;
                         case "chart11": chart11.render();

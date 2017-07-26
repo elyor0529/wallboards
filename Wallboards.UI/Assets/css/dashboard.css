@@ -109,17 +109,17 @@ hr {
 }
 
 .doughnut-chart {
-    height: 250px !important;
-    width: 100%;
-}
-
-.area-chart {
     height: 200px !important;
     width: 100%;
 }
 
+.area-chart {
+    height: 150px !important;
+    width: 100%;
+}
+
 .spline-chart {
-    height: 300px !important;
+    height: 250px !important;
     width: 100%;
 }
 

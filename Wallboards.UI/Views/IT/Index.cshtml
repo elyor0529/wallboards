@@ -1,3 +1,112 @@
 ﻿@{ 
     ViewBag.Title = "Информационных технологии";
 }
+
+<style>
+    .canvasjs-chart-credit {
+        display: none;
+    }
+
+    .col-md-4 {
+        padding-top: 10px;
+        border: solid 1px #424242;
+    }
+</style>
+
+<div id="panel-1">
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <h3>Состав команды</h3>
+
+        </div>
+
+        <div class="col-md-4">
+            <h3>Кол-во программных продуктов</h3>
+             
+        </div>
+
+        <div class="col-md-4">
+            <h3>Кол-во внутренних модулов </h3>
+             
+        </div>
+         
+        <div class="col-md-4">
+            <h3>Интеграции с гос органами </h3>
+             
+        </div>  
+
+        <div class="col-md-4">
+            <h3>Обслуживания веб сайтов</h3>
+       
+         </div>
+
+        <div class="col-md-4">
+            <h3>Полученный патенты</h3>
+
+        </div>
+
+        <div class="col-md-4">
+            <h3>Корпоративные знаки</h3>
+            
+        </div>
+
+        <div class="col-md-4">
+            <h3>Хранимый объем база данных  </h3> 
+
+        </div>
+
+        <div class="col-md-4">
+            <h3>Вместимость баз данных на серверах </h3>
+              
+        </div>
+
+    </div>
+
+</div>
+
+@section js{
+
+    <script src="~/assets/js/canvasjs.min.js"></script>
+    <script src="~/assets/js/jquery.scrollspeed.min.js"></script>
+    <script src="~/assets/js/jquery.inview.min.js"></script>
+
+    <script>
+
+        $(function () {
+             
+            jQuery.scrollSpeed(100, 400);
+
+            $('.inview').one('inview', function (e, isInView) {
+                if (isInView) {
+                    switch (this.id) {
+                        case "chart1":  
+                            break;
+                        case "chart2": 
+                            break;
+                        case "chart3": 
+                            break;
+                        case "chart4":  
+                            break;
+                        case "chart5":  
+                            break;
+                        case "chart6":  
+                            break;
+                        case "chart7":  
+                            break;
+                        case "chart8": 
+                            break;
+                        case "chart9": 
+                            break;
+                        case "chart10":  
+                            break; 
+                    }
+                }
+            });
+
+        });
+
+    </script>
+
+}

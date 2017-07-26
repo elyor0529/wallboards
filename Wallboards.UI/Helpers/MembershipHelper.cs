@@ -14,7 +14,7 @@ namespace Wallboards.UI.Helpers
         {
             Users.Add(new UserData{Role = Roles.CENTER,UserName = "center",Password = "123456"});
             Users.Add(new UserData{Role = Roles.IT,UserName = "it",Password = "123456"});
-            Users.Add(new UserData{Role = Roles.ANALITICA,UserName = "analitica",Password = "123456"}); 
+            Users.Add(new UserData{Role = Roles.ANALYTIC,UserName = "analytic", Password = "123456"}); 
         }
         
         public static UserData User => (UserData)HttpContext.Current.Session[USER_KEY];

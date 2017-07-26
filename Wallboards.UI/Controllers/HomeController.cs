@@ -15,8 +15,8 @@ namespace Wallboards.UI.Controllers
                     return RedirectToAction("Index", "Center");
                 case Roles.IT:
                     return RedirectToAction("Index", "IT");
-                case Roles.ANALITICA:
-                    return RedirectToAction("Index", "Analitica");
+                case Roles.ANALYTIC:
+                    return RedirectToAction("Index", "Analytics");
             }
 
             return HttpNotFound();

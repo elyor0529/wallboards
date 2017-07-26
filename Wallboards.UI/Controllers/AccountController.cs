@@ -11,7 +11,7 @@ namespace Wallboards.UI.Controllers
 
         [AllowAnonymous]
         public ActionResult Login()
-        {
+        {  
             return View();
         }
  
@@ -40,8 +40,6 @@ namespace Wallboards.UI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             MembershipHelper.SignOut();
